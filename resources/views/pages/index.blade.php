@@ -12,11 +12,11 @@
             <p> Rental Platform for Students </p>
             </br>
         <div class="row">
-            <a class="login100-form-btn" href="/login" ><div class="col s12 m3"  >Login</div></a>
-            <a class="login100-form-btn" href="/register"> <div class="col s12 m3">Register</div></a>
-            
+        <div class="col s12 m6"  > <a class="login100-form-btn" href="/login" >Login</a></div>
+        <div class="col s12 m6"  ><a class="login100-form-btn" href="/register"> Register</a></div>
+<!--             
             <a class="login100-form-btn" href="/login"><div class="col s12 m3" href="/login"> Download for Android</div></a>
-            <a class="login100-form-btn" href="/login"><div class="col s12 m3" href="/login">Download for IOS</div></a>
+            <a class="login100-form-btn" href="/login"><div class="col s12 m3" href="/login">Download for IOS</div></a> -->
         </div>
         </div>
     @endif

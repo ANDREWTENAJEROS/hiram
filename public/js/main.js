@@ -24,6 +24,20 @@
         transition: function(url){ window.location.href = url; }
     });
     
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems, options);
+      });
+    
+      // Or with jQuery
+    
+      $(document).ready(function(){
+        $('.carousel').carousel();
+      });
+          
+
     /*[ Back to top ]
     ===========================================================*/
     var windowH = $(window).height()/2;

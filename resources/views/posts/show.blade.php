@@ -25,22 +25,29 @@
 
 
     <!-- <a href="/posts" class="btn btn-dark">Go back</a> -->
+    <div class="row">
+    <div class="col s12 m6">
+    </br>
+    <img class="wrap_emenu" src="/storage/cover_images/{{$post->cover_image}}">
+    </div>
+    <br><br>
+    <div class="col s12 m6">
     </br>
     <h1>{{$post->title}}</h1>
     </br>
-    <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
-    <br><br>
     <div> 
         {!!$post->body!!}
-    <hr><small>Price {{$post->price}}, {{$post->category}}</small>
+    <hr><small>Price per hour {{$post->price}}  Price per day {{$post->price}}</small>
+    </br>
+    <small>Category {{$post->category}}</small>
     </div>
     <hr>
-    <small>Contact: {{$post->user->mobile}}</small>
+    <small>Terms and Conditions: </br> {{$post->user->condition}}</small>
     </hr>
     <hr>
-    <small>Uploaded on {{$post->created_at}} by {{$post->user->name}}</small>
+    <small>Uploaded on {{$post->created_at}} </br> by {{$post->user->name}}</small>
     <hr>
-
+    </div></div>
     @if(!Auth::guest())
      
         @if(Auth::user()->id == $post->user->id)
@@ -69,8 +76,9 @@
                 </div>
 
             </div>
-
+         </div>
         @else 
+        <br>
             <div class="row">
 
                 <div class="col s12 m6">
