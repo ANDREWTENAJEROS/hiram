@@ -44,32 +44,25 @@
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
         <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="vendor/tilt/tilt.jquery.min.js"></script>
-        <script >
-            $('.js-tilt').tilt({
-                scale: 1.1
-            })
-        </script>
-    <!--===============================================================================================-->
+        
         <script src="js/main.js"></script>
 
 </head>
 <body>
     <div id="app">
-
-        <main class="py-4">
-            @include('inc.navbar')
+   
+        <main>
+             <!-- @include('inc.navbar')  -->
             <div class="container">
                 @include('inc.messages')
+                <div style="margin-top: 70px">
                 @yield('content')
+                </div>
             </div>
         </main>
     </div>
     
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'article-ckeditor' );
-    </script>
+   
 </body>
 </html>

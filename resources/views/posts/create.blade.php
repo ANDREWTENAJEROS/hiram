@@ -26,6 +26,7 @@
                 </div>
 
                 <div class="input-100">
+                </br>
                 {{Form::label('body', 'Description and specifications')}}
                 {{Form::textarea('body', '', ['rows' => '3', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
                 </div>
@@ -43,23 +44,39 @@
                         </div> 
                 </div>
                 <div class="input-100">
-                
+                </br>
                 {{Form::label('Terms and Conditions', 'Terms and Conditions')}}
                 {{Form::textarea('condition', '', ['rows' => '3', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '1800', 'placeholder' => 'Use of item, condition of item, return of item, charges and payments, general provisions, privacy and protection'])}}
                 </div>
                 <div class="input-100">
-                        {{Form::label('category', 'Category')}}
-                        {{Form::text('category', '', ['class' => 'input100', 'placeholder' => 'Category'])}}
+                </br>
+                {{Form::label('category', 'Category')}}
+                        <div class="row">
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'Books and references' , false) }}Books and references
+                        </div>
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'Devices and instruments' , false) }}Devices and instruments
+                        </div>
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'Apparel and Accesories' , false) }}Apparel and Accesories
+                        </div>
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'General Supplies' , true) }}General Supplies
+                        </div>
+                        </div>
+                        
                 </div>
                 </br>
                 <div >
                          <div class="row">
+                                <div class="col s12 m6">
+                                 Chooese an image
+                                 </div>
                                  <div class="col s12 m6">
                                  {{Form::file('cover_image' , ['class' => ''])}}
                                  </div>
-                                 <!-- <div class="col s12 m6">
-                                 {{Form::file('cover_image' , ['class' => ''])}}
-                                 </div> -->
+                                 
                         </div>
 
                

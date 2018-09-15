@@ -34,6 +34,7 @@ Route::get('/about', 'PageController@about');
 Route::get('/services','PageController@services');
 
 Route::resource('posts','PostController');
+Route::resource('search','PostController');
 Route::get('/dashboard','DashboardController@index');
 
 Route::get('/sample', 'SampleController@view');

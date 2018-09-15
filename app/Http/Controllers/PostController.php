@@ -44,6 +44,10 @@ class PostController extends Controller
         return view('posts.create');
     }
 
+    public function search(){
+        return view('posts.search');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -10,6 +10,7 @@
                     <div class="alert alert-success">{{ Session::get('message') }}</div>
                 @endif --}}
                 <div class="card-body">
+                    <h2 style="text-align: center">Login to HIRAM</h2></br></br>
                         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                             @csrf
                             
@@ -51,10 +52,10 @@
 
                         <div class="text-center p-t-12">
                             <span class="txt1">
-                                Forgot
+                                Forgot Username / Password?
                             </span>
                             <a class="txt2"  href="{{ route('password.request') }}" >
-                                Username / Password?
+                                
                             </a>
                         </div>
 

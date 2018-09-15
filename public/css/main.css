@@ -186,8 +186,38 @@ iframe {
   outline: none !important;
 }
 
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
 
-
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
 
 
 /*[ LOADDING ]
@@ -600,22 +630,15 @@ iframe {
 /*[ Menu ]
 ===========================================================*/
 .wrap_header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 80px;
+  height: 70px;
+  overflow: hidden;
   background-color: white;
   justify-content: center;
   align-items: center;
-  position: relative;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+  z-index: 100;
 }
 
 .fixed-header .wrap_header {
@@ -751,6 +774,21 @@ li.sale-noti > a {
   position: absolute;
   right: 52px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.desktop-only {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -1322,7 +1360,7 @@ li.sale-noti > a {
   margin-left: 320px;
 }
 
-@media (max-width: 620px){
+@media (max-width: 780px){
   .wrap_header_mobile {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1330,6 +1368,8 @@ li.sale-noti > a {
     display: -ms-flexbox;
     display: flex !important;
   }
+
+ 
  
   .logo, .header-icons {display: none;}
   .container-menu-header-v3,
@@ -1344,6 +1384,7 @@ li.sale-noti > a {
     margin-left: 0px;
   }
 }
+
 
 
 

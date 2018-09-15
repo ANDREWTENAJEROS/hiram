@@ -32,4 +32,9 @@ class PageController extends Controller
         // return view('pages.index',compact('title'));
         return view('pages.policy')->with('title', $title);
     }
+
+    public function search(){
+        $title = 'Search items on Hiram';
+        return view('pages.search')->with('title', $title);
+    }
 }
