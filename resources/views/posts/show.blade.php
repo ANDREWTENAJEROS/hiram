@@ -28,7 +28,7 @@
     <div class="row">
             <div class="col s12 m6">
             </br>
-                <img class="responsive-image" src="/storage/cover_images/{{$post->cover_image}}"> </br>
+                <img class="responsive-image" src="URL::to('/storage/cover_images/{{$post->cover_image}}')"> </br>
             </div>
         <br><br>
         <div class="col s12 m6">
