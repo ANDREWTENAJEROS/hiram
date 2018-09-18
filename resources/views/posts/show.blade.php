@@ -47,6 +47,9 @@
             <hr>
             <small>Uploaded on {{$post->created_at}} </br> by {{$post->user->name}}</small>
             <hr>
+            </br>
+            <small>image loc: /storage/cover_images/{{$post->cover_image}}</small>
+
         </div>
     </div>
     @if(!Auth::guest())

@@ -100,6 +100,8 @@
                                             <div class="centered">
                                                 <a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a>
                                                 <small>₱ {{$post->price}}/hr</small>
+                                                </br>
+                                                <small>image loc: /storage/cover_images/{{$post->cover_image}}</small>
                                            </div>
                                            <div>
                                                 <small>By {{$post->user->name}}</small>
