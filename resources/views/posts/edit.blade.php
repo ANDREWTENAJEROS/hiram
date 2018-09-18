@@ -30,27 +30,65 @@
     {!! Form::open(['action' => ['PostController@update', $post->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('title', 'Title')}}
-            {{Form::text('title', $post->title, ['class' => 'input100', 'placeholder' => 'Title'])}}
-        </div>
-        <div class="form-group">
-            {{Form::label('body', 'Description')}}
-            {{Form::textarea('body', $post->body, ['class' => 'input100', 'placeholder' => 'Body Text'])}}
-        </div>
-        <div class="form-group">
-            {{Form::label('price', 'Price')}}
-            {{Form::text('price', $post->price, ['class' => 'input100', 'placeholder' => 'Price'])}}
-        </div>
-        <div class="form-group">
-            {{Form::label('condition', 'Condition')}}
-            {{Form::text('condition', $post->condition, ['class' => 'input100', 'placeholder' => 'condition'])}}
-        </div>
-        <div class="form-group">
-            {{Form::label('category', 'Category')}}
-            {{Form::text('category', $post->category, ['class' => 'input100', 'placeholder' => 'Category'])}}
-        </div>
-        <div class="form-group">
-            {{Form::file('cover_image')}}
-        </div>
+            {{Form::text('title', $post->title, ['class' => 'input100','required' => 'required', 'placeholder' => 'Title'])}}
+       
+                <div class="input-100">
+                </br>
+                {{Form::label('body', 'Description and specifications')}}
+                {{Form::textarea('body', '', ['rows' => '3', 'required' => 'required','class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
+                </div>
+                </br>
+                <h3>Rental Rates</h3>	
+
+                <div class="row">
+                        <div class="col s12 m6">
+                                {{Form::label('price', 'Price per hour')}}
+                                {{Form::text('price', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
+                        </div>
+                        <div class="col s12 m6">
+                                {{Form::label('price_day', 'Price per day')}}
+                                {{Form::text('price', '', ['class' => 'input100', 'input type'=>'number', 'placeholder' => '₱'])}}
+                        </div> 
+                </div>
+                <div class="input-100">
+                </br>
+                {{Form::label('Terms and Conditions', 'Terms and Conditions')}}
+                {{Form::textarea('condition', '', ['rows' => '3', 'required' => 'required', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '1800', 'placeholder' => 'Use of item, condition of item, return of item, charges and payments, general provisions, privacy and protection'])}}
+                </div>
+                <div class="input-100">
+                </br>
+                {{Form::label('category', 'Category')}}
+                        <div class="row">
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'Books and references' , false) }}Books and references
+                        </div>
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'Devices and instruments' , false) }}Devices and instruments
+                        </div>
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'Apparel and Accesories' , false) }}Apparel and Accesories
+                        </div>
+                        <div class="col s12 m3">
+                        {{ Form::radio('category', 'General Supplies' , true) }}General Supplies
+                        </div>
+                        </div>
+                        
+                </div>
+                </br>
+                <div >
+                         <div class="row">
+                                <div class="col s12 m6">
+                                 Chooese an image
+                                 </div>
+                                 <div class="col s12 m6">
+                                 {{Form::file('cover_image' , ['required' => 'required'])}}
+                                 </div>
+                                 
+                        </div>
+
+               
+                </div>
+                        </br>
         {{Form::hidden('_method', 'PUT')}}
         {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
     {!! Form::close() !!}

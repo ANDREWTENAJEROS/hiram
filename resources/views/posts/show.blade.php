@@ -99,15 +99,17 @@
                         </button>
                     </a>
                 </div>
-                <div class="col s12 m3">
-                    <a href="/about">
-                        <button class= "login100-form-btn">
-                            REPORT
-                        </button>
-                    </a>
-                </div>
+                
             </div> 
-
+            <br>
+            <div class="col s12 m6 centered" style="width: 80%">
+                
+                <a href="/about">
+                    <button class= "login100-form-btn">
+                        REPORT
+                    </button>
+                </a>
+            </div>
             </br> </br>
         @endif
     @else

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="">
                 <!-- <div class="card-header">Your Items</div> -->
 
                 <div class="card-body">
@@ -44,13 +44,14 @@
                                 @foreach($posts as $post)
                                     <tr>
                                         <!-- <td>{{$post->title}}</td> -->
-                                        <td><a href="/posts/{{$post->id}}"><h4>{{$post->title}}</h4></a></td>
+                                        <td><a href="/posts/{{$post->id}}"><h6>{{$post->title}}</h6></a></td>
 
-                                        <td><a href="/posts/{{$post->id}}/edit" class="login100-form-btn">Edit</a></td>
+                                        <td><a href="/posts/{{$post->id}}/edit">Edit</a></td>
+                                        <td><a href="/posts/{{$post->id}}/" >View</a></td>
                                         <td>
                                             {!!Form::open(['action' => ['PostController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
                                                 {{Form::hidden('_method', 'DELETE')}}
-                                                {{Form::submit('Delete', ['class' => 'login100-danger-btn'])}}
+                                                {{Form::submit('Delete', ['class' => ''])}}
                                             {!!Form::close()!!}
                                         </td>
                                     </tr>
