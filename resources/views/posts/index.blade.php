@@ -108,7 +108,7 @@
                                     </div>
                                 @endforeach
                             @else
-                                <p>No posts found</p>
+                                <p class="centered">No posts found</p>
                             @endif	
 
                            
