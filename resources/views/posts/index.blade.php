@@ -80,7 +80,11 @@
                                         <!-- Block2 -->
                                         <div class="block2" style="margin: 10px;">
                                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                                <img href="/posts/{{$post->id}}" style="width:100%" src="URL::to('/storage/cover_images/{{$post->cover_image}}')">
+                                                <!-- <img href="/posts/{{$post->id}}" style="width:100%" src="URL::to('/storage/cover_images/{{$post->cover_image}}')"> -->
+
+
+
+                                                <img src="{{ URL::to('/') }}/storage/cover_images/{{$post->cover_image}}" alt="{{$post->title}}" />
 
                                                 <div class="block2-overlay trans-0-4">
                                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
