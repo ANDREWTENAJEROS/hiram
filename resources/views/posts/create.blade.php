@@ -38,10 +38,7 @@
                                 {{Form::label('price', 'Price per hour')}}
                                 {{Form::text('price', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
-                        <div class="col s12 m6">
-                                {{Form::label('price_day', 'Price per day')}}
-                                {{Form::text('price', '', ['class' => 'input100', 'input type'=>'number', 'placeholder' => '₱'])}}
-                        </div> 
+                        
                 </div>
                 <div class="input-100">
                 </br>
