@@ -19,7 +19,6 @@
 {{-- </form> --}}
 
     <ul class="main_menu">
-<<<<<<< HEAD
 
         <li class="p-b-9">
             <a href="/posts">All</a>
@@ -38,29 +37,6 @@
         <li class="p-b-9">
         <input type="submit" name="search_category" style="background-color:white;" 
                 value="Apparel and Accesories">
-=======
-            <li class="p-b-9">
-            <li class="p-b-9">
-            <a href="#" class="s-text7">
-                All
-            </a>
-          </li>
-            <button type="link" value="{{ isset($search_category) ? $search_category : '' }}" class="s-text7">
-                Books and references
-            </button>
-            </li>
-           <li class="p-b-9">
-            <a href="#" class="s-text7">
-                Devices and instruments
-            </a>
-          </li>
-
-          <li class="p-b-9">
-            <a href="#"   class="s-text7">
-                Apparel and Accesories
-            </a>
->>>>>>> 0f5cc085975d401859f0c7e6003f10de794996e9
-        </li>
 
         <li class="p-b-9">
             <input type="submit" name="search_category" style="background-color:white;" 
