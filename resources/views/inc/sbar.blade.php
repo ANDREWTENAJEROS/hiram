@@ -24,7 +24,6 @@
                 All
             </a>
           </li>
-            <!-- <button type="link" {{$search_category = "Books and references";}} value="{{ isset($search_category) ? $search_category : '' }}" class="s-text7"> -->
             <button type="link" value="{{ isset('Books and references') ? 'Books and references' : '' }}" class="s-text7">
                 Books and references
             </button>
