@@ -28,8 +28,8 @@
     <div class="row">
             <div class="col s12 m6">
             </br>
-            <img src="{{ URL::to('/') }}/storage/cover_images/{{$post->cover_image}}" alt="{{$post->title}}" />
-
+            <!-- <img src="{{ URL::to('/') }}/storage/cover_images/{{$post->cover_image}}" alt="{{$post->title}}" /> -->
+            <img src="/storage/cover_images/{{$post->cover_image}}" />
                 <!-- <img class="responsive-image" src="URL::to('/storage/cover_images/{{$post->cover_image}}')"> -->
                  </br>
             </div>
