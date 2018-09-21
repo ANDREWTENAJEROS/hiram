@@ -16,31 +16,34 @@
             <i class="fs-12 fa fa-search" aria-hidden="true"></i>
         </button>
     </div>
+{{-- </form> --}}
 
     <ul class="main_menu">
-            <li class="p-b-9">
-            <a href="#" class="s-text7">
-                Books and references
-            </a>
-            </li>
-           <li class="p-b-9">
-            <a href="#" class="s-text7">
-                Devices and instruments
-            </a>
-          </li>
 
-          <li class="p-b-9">
-            <a href="#"   class="s-text7">
-                Apparel and Accesories
-            </a>
+        <li class="p-b-9">
+            <a href="/posts">All</a>
         </li>
 
         <li class="p-b-9">
-            <a href="#" class="s-text7">
-                General Supplies and others
-            </a>
+            <input type="submit" name="search_category" style="background-color:white;" 
+                value="Books and references">
         </li>
-        </ul>
+
+        <li class="p-b-9">
+        <input type="submit" name="search_category" style="background-color:white;" 
+                value="Devices and instruments">
+        </li>
+
+        <li class="p-b-9">
+        <input type="submit" name="search_category" style="background-color:white;" 
+                value="Apparel and Accesories">
+        </li>
+
+        <li class="p-b-9">
+            <input type="submit" name="search_category" style="background-color:white;" 
+                value="General Supplies">
+        </li>
+    </ul>
         @guest
 				
         
