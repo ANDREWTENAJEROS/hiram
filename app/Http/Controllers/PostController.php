@@ -23,15 +23,22 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search_product = $request->input('search_product');
+        $search_category = $request->get('search_category');
         // $posts = Post::all();
         // $posts = Post::orderBy('title', 'desc')->take(1)->get();
     
-        $posts = Post::orderBy('created_at', 'asc')->paginate(6);
+        // $posts = Post::orderBy('created_at', 'asc')->paginate(6);
+        $posts = Post::latest()
+                ->search($search_product)
+                ->category($search_category)
+                ->paginate(8);
+
         // $posts = Post::orderBy('title', 'asc')->get();
         $users = User::orderBy('name')->get();
-        return view('posts.index')->with('posts', $posts)->with('users', $users);
+        return view('posts.index', compact('posts'))->with('posts', $posts)->with('users', $users);
     }
 
     /**
