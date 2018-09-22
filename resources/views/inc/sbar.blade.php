@@ -20,7 +20,7 @@
 
     <ul class="main_menu">
 
-        <li class="p-b-9">
+        <li class="p-b-12">
             <a href="/posts">All</a>
         </li>
 
