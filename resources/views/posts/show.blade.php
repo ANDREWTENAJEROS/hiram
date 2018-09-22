@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="../../../css/util.css">
     <link rel="stylesheet" type="text/css" href="../../../css/main.css">
 
-    <div id="{{$post->id}}"></div>
+    <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -38,7 +38,8 @@
             </br>
             <!-- <img src="{{ URL::to('/') }}/storage/cover_images/{{$post->cover_image}}" alt="{{$post->title}}" /> -->
             <!-- <img src="/storage/cover_images/{{$post->cover_image}}" /> -->
-            <img  style="    width: 250px;" src="https://vfveqg.bn.files.1drv.com/y4mOKO9kyGQPENwvxIK_rFd5Wy2STZ9A-3n-zG4Nh7MxNqCSXDXd74tkSwkSGcmi1fr5ThvLe5n4ecCx1x76q8FlFlGB889N2HfX2PbC2npII847MYovW0oKpAWY4t8Lo7ugy48vgLeKNd1TGslJ7lK2dhfhWa4acdCLOKXFCP_vWhrkM0Y2ooLnbrVfTjCbNkt-sEYEpJil9fWGE2B12EMIw?width=1250&height=830&cropmode=none" />
+            <img  style="width: 300px;" src="https://vfveqg.bn.files.1drv.com/y4mOKO9kyGQPENwvxIK_rFd5Wy2STZ9A-3n-zG4Nh7MxNqCSXDXd74tkSwkSGcmi1fr5ThvLe5n4ecCx1x76q8FlFlGB889N2HfX2PbC2npII847MYovW0oKpAWY4t8Lo7ugy48vgLeKNd1TGslJ7lK2dhfhWa4acdCLOKXFCP_vWhrkM0Y2ooLnbrVfTjCbNkt-sEYEpJil9fWGE2B12EMIw?width=1250&height=830&cropmode=none" />
+
                 <!-- <img class="responsive-image" src="URL::to('/storage/cover_images/{{$post->cover_image}}')"> -->
                  </br>
             </div>
@@ -60,8 +61,7 @@
             <small>Uploaded on {{$post->created_at}} </br> by {{$post->user->name}}</small>
             <hr>
             </br>
-            <small>image loc: /storage/cover_images/{{$post->cover_image}}</small>
-            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="4"></div>
+            <div class="fb-comments" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
 
         </div>
     </div>
