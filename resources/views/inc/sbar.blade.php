@@ -21,7 +21,7 @@
     <ul class="main_menu">
 
         <li class="p-b-12">
-            <a href="/posts" styface="poppines-regular" style="padding-left: 80px; padding-right: 80px;">All</a>
+            <h4 href="/posts" style="padding-left: 80px; padding-right: 80px;">All</h4>
         </li>
 
         <li class="p-b-9">
