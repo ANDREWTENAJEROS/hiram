@@ -78,14 +78,13 @@
                                                 </div>
                                             </div>
 
-                                            <div class="centered">
+                                            <div style="left: 0; right: 0;">
                                                 <a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a>
                                                 <small>₱ {{$post->price}}/hr</small>
                                                 </br>
-                                                <small>image loc: storage/cover_images/{{$post->cover_image}}</small>
                                            </div>
                                            <div>
-                                                <small>By {{$post->user->name}}</small>
+                                                <small>Posted by {{$post->user->name}}</small>
                                            </div>
                                         </div>
                                     </div>
