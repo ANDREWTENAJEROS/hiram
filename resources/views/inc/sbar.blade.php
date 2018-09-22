@@ -21,7 +21,7 @@
     <ul class="main_menu">
 
         <li class="p-b-12">
-            <p style="font-family: poppines-regular" href="/posts" style="padding-left: 80px; padding-right: 80px;">All</p>
+            <input style="font-family: poppines-regular" href="/posts" style="padding-left: 80px; padding-right: 80px;">All</input>
         </li>
 
         <li class="p-b-9">
