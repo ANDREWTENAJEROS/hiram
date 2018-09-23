@@ -90,7 +90,7 @@
                                     </div>
                                 @endforeach
                             @else
-                                <p class="centered">No posts found</p>
+                                <p style="margin-right: 0px;margin-left: 150px;" >No posts found</p>
                             @endif	
 
                            
