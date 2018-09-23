@@ -50,7 +50,7 @@
             </br>
             <div> 
                     {!!$post->body!!}
-                <hr><small>Price per hour {{$post->price}}  Price per day {{$post->price}}</small>
+                <hr><small>Price per hour {{$post->price}} Price per day {{$post->price}}</small>
                 </br>
                 <small>Category {{$post->category}}</small>
             </div>
@@ -61,6 +61,7 @@
             <small>Uploaded on {{$post->created_at}} </br> by {{$post->user->name}}</small>
             <hr>
             </br>
+            <div class="fb-like" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
             <div class="fb-comments" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
 
         </div>
