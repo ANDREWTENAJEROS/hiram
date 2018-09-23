@@ -11,31 +11,35 @@
 |
 */ 
 
-/*Route::get('/hello', function () {
-    return '<h1>Hello World</h1>';
-});
-
-Route::get('/users/{id}/{name}', function($id, $name){
-    return 'This is user '.$name. ' with an id of ' .$id;
-});
-
-Route::get('/about', function(){
-    return view('pages.about');
-});*/
-
 Auth::routes();
 
-Route::get('/', 'PageController@index');
+/*temporary 
+->example lang na Routes/functions */
 
-// Route::get('/verify','VerifyController@getVerify');
-// Route::post('/verify', [ 'as' => 'verify', 'uses' => 'VerifyController@postVerify']);
+Route::get('/', function(){
+    return view('fileUpload');
+});
 
-Route::get('/about', 'PageController@about');
-Route::get('/services','PageController@services');
+Route::post('upload', function(){
+    request()->file('file')->store(
+        'cover_image',
+        's3'
+    );
+    
+    return back();
+})->name('upload');
 
-Route::resource('posts','PostController');
-Route::resource('search','PostController');
-Route::get('/dashboard','DashboardController@index');
+//para ni sa magview not functional pa
+Route::post('view', function(){
+    return request()->$filesystem->getAdapter()->getClient()->getObjectUrl($bucket, $key); //wala pay blade para ma-view ang image
+})->name('view');
 
-Route::get('/sample', 'SampleController@view');
-Route::get('/policy', 'PageController@policy');
+
+//ipang uncomment lang ni.
+
+// Route::get('/', 'PageController@index');
+// Route::get('/about', 'PageController@about');
+// Route::get('/services','PageController@services');
+// Route::resource('posts','PostController');
+// Route::get('/dashboard','DashboardController@index');
+// Route::get('/policy', 'PageController@policy');
