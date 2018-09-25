@@ -11,35 +11,31 @@
 |
 */ 
 
-Auth::routes();
-
-/*temporary 
-->example lang na Routes/functions */
-
-Route::get('/', function(){
-    return view('fileUpload');
+/*Route::get('/hello', function () {
+    return '<h1>Hello World</h1>';
 });
 
-Route::post('upload', function(){
-    request()->file('file')->store(
-        'cover_image',
-        's3'
-    );
-    
-    return back();
-})->name('upload');
+Route::get('/users/{id}/{name}', function($id, $name){
+    return 'This is user '.$name. ' with an id of ' .$id;
+});
 
-//para ni sa magview not functional pa
-Route::post('view', function(){
-    return request()->$filesystem->getAdapter()->getClient()->getObjectUrl($bucket, $key); //wala pay blade para ma-view ang image
-})->name('view');
+Route::get('/about', function(){
+    return view('pages.about');
+});*/
 
+Auth::routes();
 
-//ipang uncomment lang ni.
+Route::get('/', 'PageController@index');
 
-// Route::get('/', 'PageController@index');
-// Route::get('/about', 'PageController@about');
-// Route::get('/services','PageController@services');
-// Route::resource('posts','PostController');
-// Route::get('/dashboard','DashboardController@index');
-// Route::get('/policy', 'PageController@policy');
+// Route::get('/verify','VerifyController@getVerify');
+// Route::post('/verify', [ 'as' => 'verify', 'uses' => 'VerifyController@postVerify']);
+
+Route::get('/about', 'PageController@about');
+Route::get('/services','PageController@services');
+
+Route::resource('posts','PostController');
+Route::resource('search','PostController');
+Route::get('/dashboard','DashboardController@index');
+
+Route::get('/sample', 'SampleController@view');
+Route::get('/policy', 'PageController@policy');
