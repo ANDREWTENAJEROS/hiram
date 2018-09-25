@@ -11,8 +11,21 @@
 |
 */ 
 
+/*Route::get('/hello', function () {
+    return '<h1>Hello World</h1>';
+});
+
+Route::get('/users/{id}/{name}', function($id, $name){
+    return 'This is user '.$name. ' with an id of ' .$id;
+});
+
+Route::get('/about', function(){
+    return view('pages.about');
+});*/
+
 Auth::routes();
 
+<<<<<<< HEAD
 /*
     Route::get('/', function(){
         return view('fileUpload');
@@ -41,4 +54,19 @@ Route::get('/about', 'PageController@about');
 Route::get('/services','PageController@services');
 Route::resource('posts','PostController');
 Route::get('/dashboard','DashboardController@index');
+=======
+Route::get('/', 'PageController@index');
+
+// Route::get('/verify','VerifyController@getVerify');
+// Route::post('/verify', [ 'as' => 'verify', 'uses' => 'VerifyController@postVerify']);
+
+Route::get('/about', 'PageController@about');
+Route::get('/services','PageController@services');
+
+Route::resource('posts','PostController');
+Route::resource('search','PostController');
+Route::get('/dashboard','DashboardController@index');
+
+Route::get('/sample', 'SampleController@view');
+>>>>>>> 2f0169efaf5373f934dae47f82925eb20c798cb2
 Route::get('/policy', 'PageController@policy');

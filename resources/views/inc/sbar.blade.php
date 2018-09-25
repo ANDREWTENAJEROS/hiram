@@ -21,9 +21,9 @@
     <ul class="main_menu">
 
         <li class="p-b-9">
-            <input style="font-family: poppines-regular" href="/posts" style="padding-left: 80px; padding-right: 80px; left: 80px; right: 80px;" >All</input>
+            <h6 href="/posts" >All Categories</h6>
         </li>
-
+        
         <li class="p-b-9">
             <input type="submit" name="search_category" style="background-color:white;" 
                 value="Books and references">
