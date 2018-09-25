@@ -72,7 +72,7 @@
                                                     <div class="block2-btn-addcart w-size1 trans-0-4">
                                                         <!-- Button -->
                                                         
-                                                             <button href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</button>
+                                                             <a href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
                                                         
                                                     </div>
                                                 </div>
