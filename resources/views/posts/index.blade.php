@@ -60,7 +60,7 @@
 
 
                                                 <!-- <img src="/storage/cover_images/{{$post->cover_image}}" /> -->
-                                                <img src="https://vfveqg.bn.files.1drv.com/y4mOKO9kyGQPENwvxIK_rFd5Wy2STZ9A-3n-zG4Nh7MxNqCSXDXd74tkSwkSGcmi1fr5ThvLe5n4ecCx1x76q8FlFlGB889N2HfX2PbC2npII847MYovW0oKpAWY4t8Lo7ugy48vgLeKNd1TGslJ7lK2dhfhWa4acdCLOKXFCP_vWhrkM0Y2ooLnbrVfTjCbNkt-sEYEpJil9fWGE2B12EMIw?width=1250&height=830&cropmode=none" />
+                                                <img src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
                                                 <!-- <img src="{{ URL::to('/') }}storage/cover_images/{{$post->cover_image}}" alt="{{$post->title}}" /> -->
 
                                                 <div class="block2-overlay trans-0-4">

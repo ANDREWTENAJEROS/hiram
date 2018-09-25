@@ -66,13 +66,14 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'cover_image' => 'image|nullable|max:1999',
+            'cover_image' => 'required',
             'price' => 'required',
             'condition' => 'required',
             'category' => 'required'
         ]);
 
         //Handler file upload
+    /*
         if($request->hasFile('cover_image')){
             //Get filenname with the extension
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
@@ -90,6 +91,7 @@ class PostController extends Controller
         }else{
             $fileNameToStore = 'noimage.jpg';
         }
+    */
         
         //Create new Post
         $post = new Post;
@@ -99,7 +101,13 @@ class PostController extends Controller
         $post->condition = $request->input('condition');
         $post->category = $request->input('category');
         $post->user_id = auth()->user()->id;
-        $post->cover_image = $fileNameToStore;
+
+        $imageURL = request()->file('cover_image')->store(
+            'my-file',
+            's3'
+        );
+
+        $post->cover_image = $imageURL;
         $post->save();
 
         return redirect('/dashboard')->with('success', 'Post Created');
