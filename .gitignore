@@ -9,5 +9,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+<<<<<<< HEAD
 /vendor
+=======
+.env
+>>>>>>> parent of 4d9feec... added vendor
 
