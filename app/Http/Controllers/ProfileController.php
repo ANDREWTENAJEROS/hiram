@@ -16,7 +16,6 @@ class ProfileController extends Controller
         $posts = Post::orderBy('title', 'asc')->paginate(8);
         // $users = User::orderBy('name')->get();
         
-        
         $user = User::find($user_id);
         
         return view('posts.profile')->with('posts', $user->posts);
