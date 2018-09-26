@@ -35,22 +35,20 @@
     <!-- <a href="/posts" class="btn btn-dark">Go back</a> -->
     <div class="row">
             <div class="col s12 m6">
-            </br>
-            <!-- <img src="{{ URL::to('/') }}/storage/cover_images/{{$post->cover_image}}" alt="{{$post->title}}" /> -->
-            <!-- <img src="/storage/cover_images/{{$post->cover_image}}" /> -->
-        <img  style="width: 300px;" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
-
-                <!-- <img class="responsive-image" src="URL::to('/storage/cover_images/{{$post->cover_image}}')"> -->
-                 </br>
+                </br>
+                    <img  style="width: 300px;" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+                </br>
             </div>
-        <br><br>
+        </br></br>
         <div class="col s12 m6">
             </br>
             <h1>{{$post->title}}</h1>
+            <a>Owner </a> <a href="/posts/{{$post->user_id}}">{{$post->user->name}}</a>  
+            </br>
             </br>
             <div> 
-                    {!!$post->body!!}
-                <hr><small>Price per hour {{$post->price}} Price per day {{$post->price}}</small>
+                {!!$post->body!!}
+                <hr><small>Price per hour {{$post->price}} | Price per day {{$post->price}}</small>
                 </br>
                 <small>Category {{$post->category}}</small>
             </div>
