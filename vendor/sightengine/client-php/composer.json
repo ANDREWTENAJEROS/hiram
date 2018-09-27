@@ -1,0 +1,22 @@
+{	
+	"name": "sightengine/client-php",
+  "description": "Sightengine PHP client",
+  "homepage": "https://sightengine.com",
+  "authors": [
+    { "name": "Sightengine Team", "homepage": "https://sightengine.com" }
+  ],
+
+  "require-dev": {
+      "phpunit/phpunit": "^5.7"
+  },
+
+  "require": {
+      "guzzlehttp/guzzle": "~6.0"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Sightengine\\": "src/"
+    }
+  }
+}
