@@ -26,7 +26,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'asc')->paginate(6);
+        $posts = Post::orderBy('created_at', 'asc')->paginate(8);
         $users = User::orderBy('name')->get();
         
         $user_id = auth()->user()->id;

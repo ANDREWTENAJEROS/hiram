@@ -44,8 +44,6 @@
             <h1>{{$post->title}}</h1>
             </br>
             <div> 
-                    {!!$post->body!!}
-                <hr><small>Price per hour {{$post->price}} Price per day {{$post->price}}</small>
                 </br>
                 <small>Category {{$post->category}}</small>
             </div>
