@@ -48,33 +48,33 @@
                       <div>
 
                         <!-- Product -->
-                        <div class="row" style="margin-right: 0px;">
+                        <div class="row" style="margin-right: 0px; align:center; ">
                         </br>
                             @if(count($posts) > 0)
                                 @foreach($posts as $post)
                                     <div class="col-sm-12 col-md-4 col-lg-3 p-b-50">
                                         <!-- Block2 -->
-                                        <div class="block2" style="margin: 10px;">
-                                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                                        <div class="block2" style="margin: 10px; align:center; ">
+                                            <div style="width:250px;    " class="block2-img wrap-pic-w of-hidden pos-relative">
                                                 
-                                                <img src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+                                                <img style="align:center; " src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
 
-                                                <div class="block2-overlay trans-0-4">
+                                                <div style="align:center; " class="block2-overlay trans-0-4">
                                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
                                                         <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
                                                         <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                                     </a>
 
-                                                    <div class="block2-btn-addcart w-size1 trans-0-4">
+                                                    <div style="align:center; " class="block2-btn-addcart w-size1 trans-0-4">
                                                         <!-- Button -->
                                                         
-                                                             <a href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
+                                                             <a style="align:center; " href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
                                                         
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div style="left: 0; right: 0;">
+                                            <div style="align:center; ">
                                                 <a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a>
                                                 <small>₱ {{$post->price}}/hr</small>
                                                 </br>
