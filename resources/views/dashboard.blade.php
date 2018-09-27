@@ -29,23 +29,19 @@
                              document.getElementById('logout-form').submit();"> </br>logout
 					</a> </div>
 
-
                         </div>
                         @if(count($posts) > 0)  
                         </br></br></br>
                         <div class="row justify-content-center">
                             <table class="table">
                                 <tr>
-
                                     <th>Your items</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
                                 @foreach($posts as $post)
                                     <tr>
-                                        <!-- <td>{{$post->title}}</td> -->
                                         <td><a href="/posts/{{$post->id}}"><h6>{{$post->title}}</h6></a></td>
-
                                         <td><a href="/posts/{{$post->id}}/edit">Edit</a></td>
                                         <td><a href="/posts/{{$post->id}}/" >View</a></td>
                                         <td>
