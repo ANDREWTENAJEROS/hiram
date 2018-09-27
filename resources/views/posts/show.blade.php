@@ -31,16 +31,16 @@
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2008481492505313&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- <a href="/posts" class="btn btn-dark">Go back</a> -->
     <div class="row">
-            <div class="col s12 m6">
-                </br>
-                    <img  style="width: 300px;" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
-                </br>
+    <!-- class="col s12 m6" -->
+            <div  style="margin: 0 auto;" class="col s12 m6">
+            </br>
+        <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+
+                 </br>
             </div>
-        </br></br>
-        <div class="col s12 m6">
+        <br><br>
+        <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
             <h1>{{$post->title}}</h1>
                 <a href="/profiles/{{$post->user_id}}">Owner {{$post->user->name}}</a>
@@ -59,8 +59,8 @@
             <small>Uploaded on {{$post->created_at}} </br> by {{$post->user->name}}</small>
             <hr>
             </br>
-            <div class="fb-like" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
-            <div class="fb-comments" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
+            <div class="fb-like" style="width:100%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+            <div class="fb-comments" style="width:90%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
 
         </div>
     </div>

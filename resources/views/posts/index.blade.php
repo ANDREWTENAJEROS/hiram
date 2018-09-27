@@ -6,15 +6,9 @@
      
                         </div>
                     </div>
-
-                     
                 </div> 
             </div>
-
-         
-        </header>
-
-        <!-- Title Page -->
+        </header>   
         <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(images/heading-pages-02.jpg);">
             <h2 class="l-text2 t-center">
                 HIRAM
@@ -24,27 +18,15 @@
             </p>
         </section>
         
-
-        <!-- Content page -->
-        
         <section class="bgwhite p-t-55 p-b-65" style="padding-top: 0px;">
       
             <div class="container" >
                     @include('inc.sbar')
-                            <!-- <div id="search" class="search-product pos-relative bo4 of-hidden"> OLD SEARCH -->
                         
                 </br>       
                 
                 <div class="row">
-                     <!--<div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-                        <div class="leftbar p-r-20 p-r-0-sm">
-                            
-                                
-                            </div>
-                        </div> -->
-
-                    
-                        <!-- <div class="col-sm-6 col-md-8 col-lg-9 p-b-50"> -->
+                
                       <div>
 
                         <!-- Product -->
@@ -54,33 +36,28 @@
                                 @foreach($posts as $post)
                                     <div class="col-sm-12 col-md-4 col-lg-3 p-b-50">
                                         <!-- Block2 -->
-                                        <div class="block2" style="margin: 10px; align:center; ">
-                                            <div style="width:250px;    " class="block2-img wrap-pic-w of-hidden pos-relative">
+                                        <div class="block2"  style="margin: 10px; align:center; ">
+                                            <div style="width:100%; margin: 0 auto;"  class="block2-img wrap-pic-w of-hidden pos-relative">
                                                 
-                                                <img style="align:center; " src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+                                                <img style=" margin: 0 auto; " src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
 
-                                                <div style="align:center; " class="block2-overlay trans-0-4">
+                                                <div style=" margin: 0 auto; " class="block2-overlay trans-0-4">
                                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
                                                         <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
                                                         <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                                     </a>
-
-                                                    <div style="align:center; " class="block2-btn-addcart w-size1 trans-0-4">
-                                                        <!-- Button -->
-                                                        
-                                                             <a style="align:center; " href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
-                                                        
+                                                    <div style=" margin: 0 auto; " class="block2-btn-addcart w-size1 trans-0-4">
+                                                             <a style=" margin: 0 auto; " href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div style=" margin: 0 auto; ">
+                                                <a href="/posts/{{$post->id}}"><h3 style="text-align:center; padding-top: 10px;">{{$post->title}}</h3></a>
+                                                <h5 style="text-align:center;">₱ {{$post->price}}/hr</h5>
 
-                                            <div style="align:center; ">
-                                                <a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a>
-                                                <small>₱ {{$post->price}}/hr</small>
-                                                </br>
                                            </div>
-                                           <div>
-                                                <small>Posted by {{$post->user->name}}</small>
+                                           <div style="text-align:center; margin: 0 auto;">
+                                           <small>Posted by {{$post->user->name}}</small>
                                            </div>
                                         </div>
                                     </div>

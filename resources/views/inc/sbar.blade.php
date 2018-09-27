@@ -20,8 +20,8 @@
 
     <ul class="main_menu">
 
-        <li class="p-b-9">
-            <h6 href="/posts" >All Categories</h6>
+        <li style="margin-right:10px;margin-left:10px;" class="p-b-9">
+            <a href="/posts"  >All Categories</a>
         </li>
         
         <li class="p-b-9">
