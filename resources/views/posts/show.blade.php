@@ -32,9 +32,10 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     <div class="row">
-            <div style="margin: 0 auto;" class="col s12 m6">
+    <!-- class="col s12 m6" -->
+            <div  class="col s12 m6">
             </br>
-        <img  style="width: 100%; margin: 0 auto;" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+        <img  style="width: 350px;" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
 
                  </br>
             </div>
