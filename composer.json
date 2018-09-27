@@ -31,7 +31,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Envato\\Aws\\": "packages/envato/aws/src"
         }
     },
     "autoload-dev": {

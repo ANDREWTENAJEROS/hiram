@@ -135,6 +135,7 @@ class ComposerStaticInite143ddbc981989f2ad0cd5f11c558397
         ),
         'E' => 
         array (
+            'Envato\\Aws\\' => 11,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -354,6 +355,10 @@ class ComposerStaticInite143ddbc981989f2ad0cd5f11c558397
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Envato\\Aws\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/packages/envato/aws/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (

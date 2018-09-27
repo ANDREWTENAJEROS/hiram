@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function show($user_id){
+    public function show(){
 
         $posts = Post::all();
 
