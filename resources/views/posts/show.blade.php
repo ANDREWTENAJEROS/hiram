@@ -42,8 +42,12 @@
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
             <h1>{{$post->title}}</h1>
+            <a>Owner </a> <a href="/posts/{{$post->user_id}}">{{$post->user->name}}</a>  
+            </br>
             </br>
             <div> 
+                {!!$post->body!!}
+                <hr><small>Price per hour {{$post->price}} | Price per day {{$post->price}}</small>
                 </br>
                 <small>Category {{$post->category}}</small>
             </div>
