@@ -60,7 +60,7 @@
             <hr>
             </br>
             <div class="fb-like" style="width:100%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
-            <div class="fb-comments" style="width:100%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
+            <div class="fb-comments" style="width:90%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
 
         </div>
     </div>
