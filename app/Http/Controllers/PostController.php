@@ -124,15 +124,6 @@ class PostController extends Controller
         return view('posts.show')->with('post', $post);
     }
 
-    public function showProfile($user_id){
-        $user = Post::find($user_id);
-
-        $result = $query->where('user_id', 'like', $user_id);
-        $users = Post::get($query);
-
-        return view('posts.profile')->with('post', $post);
-    }
-
 
     /**
      * Show the form for editing the specified resource.
