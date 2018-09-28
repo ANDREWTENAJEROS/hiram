@@ -35,7 +35,7 @@
                 <div class="input-100">
                 </br>
                 {{Form::label('body', 'Description and specifications')}}
-                {{Form::textarea('body', '', ['rows' => '3', 'required' => 'required','class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
+                {{Form::textarea('body', $post->body, ['rows' => '3', 'required' => 'required','class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
                 </div>
                 </br>
                 <h3>Rental Rates</h3>	
@@ -43,17 +43,14 @@
                 <div class="row">
                         <div class="col s12 m6">
                                 {{Form::label('price', 'Price per hour')}}
-                                {{Form::text('price', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
+                                {{Form::text('price', $post->price, ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
-                        <div class="col s12 m6">
-                                {{Form::label('price_day', 'Price per day')}}
-                                {{Form::text('price', '', ['class' => 'input100', 'input type'=>'number', 'placeholder' => '₱'])}}
-                        </div> 
+                       
                 </div>
                 <div class="input-100">
                 </br>
                 {{Form::label('Terms and Conditions', 'Terms and Conditions')}}
-                {{Form::textarea('condition', '', ['rows' => '3', 'required' => 'required', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '1800', 'placeholder' => 'Use of item, condition of item, return of item, charges and payments, general provisions, privacy and protection'])}}
+                {{Form::textarea('condition', $post->condition, ['rows' => '3', 'required' => 'required', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '1800', 'placeholder' => 'Use of item, condition of item, return of item, charges and payments, general provisions, privacy and protection'])}}
                 </div>
                 <div class="input-100">
                 </br>
@@ -72,7 +69,6 @@
                         {{ Form::radio('category', 'General Supplies' , true) }}General Supplies
                         </div>
                         </div>
-                        
                 </div>
                 </br>
                 <div >
@@ -81,7 +77,7 @@
                                  Chooese an image
                                  </div>
                                  <div class="col s12 m6">
-                                 {{Form::file('cover_image' , ['required' => 'required'])}}
+                                 {{Form::file('cover_image', ['required' => 'required'])}}
                                  </div>
                                  
                         </div>
