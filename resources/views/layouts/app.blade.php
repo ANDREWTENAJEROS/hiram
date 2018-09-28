@@ -52,7 +52,6 @@
     <div id="app">
    
         <main>
-             <!-- @include('inc.navbar')  -->
             <div class="container">
                 @include('inc.messages')
                 <div style="margin-top: 70px">
