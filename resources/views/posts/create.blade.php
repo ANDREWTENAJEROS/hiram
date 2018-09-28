@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@section('content')
-
     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
@@ -22,7 +20,7 @@
                 <div class="input-100">
                 </br>
                 {{Form::label('title', 'What are item are you lending?')}}
-                {{Form::text('title', '', ['class' => 'input100','required' => 'required', 'placeholder' => 'Ex: 360 Pin Solderless Breadboard'])}}
+                {{Form::text('title', '', ['class' => 'input100','required' => 'required', 'placeholder' => 'Ex: Solderless Breadboard'])}}
                 </div>
 
                 <div class="input-100">
@@ -59,7 +57,7 @@
                         {{ Form::radio('category', 'Apparel and Accesories' , false) }}Apparel and Accesories
                         </div>
                         <div class="col s12 m3">
-                        {{ Form::radio('category', 'General Supplies' , true) }}General Supplies
+                        {{ Form::radio('category', 'General Supplies' , false) }}General Supplies
                         </div>
                         </div>
                         
