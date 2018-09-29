@@ -57,6 +57,35 @@
                             </div>
                         </div>
 
+                       
+
+                        <div class="form-group row">
+                        <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Home Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="address" class="input100" name="address" required>
+                            </div>
+                        </div>
+                        
+
+                            <div class="form-group row ">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="age" type="number" style="width:40%; padding-left: 25px;padding-right: 20px;" class="input100" name="age" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
+
+                                <div class="col-md-3">
+                                <input style="margin:auto 0;" type="radio" name="agree" required>Male  
+                                 </div>
+                                 <div class="col-md-3">
+                                <input style="margin:auto 0;" type="radio" name="agree" required>Female
+                                </div>
+                            </div>
                         <!--Password-->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -80,7 +109,6 @@
                                 <input id="password-confirm" type="password" class="input100" name="password_confirmation" required>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
 
@@ -88,7 +116,6 @@
                                 <input type="checkbox" name="agree" required> I've read and understood hirams's <a href="/policy" target="_blank">Terms & Conditions</a>.
                             </div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="login100-form-btn">
