@@ -66,21 +66,17 @@
                         {{ Form::radio('category', 'Apparel and Accesories' , false) }}Apparel and Accesories
                         </div>
                         <div class="col s12 m3">
-                        {{ Form::radio('category', 'General Supplies' , true) }}General Supplies
+                        {{ Form::radio('category', 'General Supplies' , false ) }}General Supplies
                         </div>
                         </div>
                 </div>
                 </br>
                 <div >
-                         <div class="row">
-                                <div class="col s12 m6">
-                                 Chooese an image
-                                 </div>
-                                 <div class="col s12 m6">
-                                 {{Form::file('cover_image', ['required' => 'required'])}}
-                                 </div>
-                                 
-                        </div>
+                <div class="form-group">
+                                        <label for="exampleInputFile">Chooese an image</label>
+                                        <input type="file" name="cover_image" id="cover_image">
+                                         </div>
+                                          {{ csrf_field() }}
 
                
                 </div>
