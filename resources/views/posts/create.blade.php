@@ -68,18 +68,11 @@
                          <div class="row">
                                 <div class="col s12 m6">
                                 </br>
-                                 
+                                 Chooese an image
                                  </br>
                                  </div>
                                  <div class="col s12 m6">
-                                 <!-- {{Form::file('cover_image' , ['required' => 'required'])}} -->
-                                
-
-                                         <div class="form-group">
-                                        <label for="exampleInputFile">Chooese an image</label>
-                                        <input type="file" name="cover_image" id="cover_image">
-                                         </div>
-                                          {{ csrf_field() }}
+                                 {{Form::file('cover_image' , ['required' => 'required'])}}
                                  </div>
                                  
                         </div>
