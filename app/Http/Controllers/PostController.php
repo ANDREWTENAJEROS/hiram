@@ -68,7 +68,8 @@ class PostController extends Controller
             'body' => 'required',
             'cover_image' => 'required',
             'condition' => 'required',
-            'category' => 'required'
+            'category' => 'required',
+            'location' => 'required',
         ]);
 
         //Handler file upload
@@ -105,6 +106,18 @@ class PostController extends Controller
             's3'
         );
 
+        $imageURL1 = request()->file('image1')->store(
+            'my-file',
+            's3'
+        );
+
+        $imageURL2 = request()->file('image2')->store(
+            'my-file',
+            's3'
+        );
+
+        $post->image1 = $imageURL1;
+        $post->image2 = $imageURL2;
         $post->cover_image = $imageURL;
         $post->save();
 
