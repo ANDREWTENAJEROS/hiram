@@ -67,7 +67,6 @@ class PostController extends Controller
             'title' => 'required',
             'body' => 'required',
             'cover_image' => 'required',
-            'price' => 'required',
             'condition' => 'required',
             'category' => 'required'
         ]);
@@ -95,7 +94,8 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-        $post->price = $request->input('price');
+        $post->price_per_day = $request->input('price_per_day');
+        $post->price_per_hour = $request->input('price_per_hour');
         $post->condition = $request->input('condition');
         $post->category = $request->input('category');
         $post->user_id = auth()->user()->id;
@@ -153,9 +153,8 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'price' => 'required',
             'condition' => 'required',
-            'category' => 'required'
+            'category' => 'required',
         ]);
     /*
         //Handler file upload
@@ -177,7 +176,8 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-        $post->price = $request->input('price');
+        $post->price_per_day = $request->input('price_per_day');
+        $post->price_per_hour = $request->input('price_per_hour');
         $post->condition = $request->input('condition');
         $post->category = $request->input('category');
 
@@ -211,14 +211,6 @@ class PostController extends Controller
 
         $post->delete();
 
-        $modal = "<div class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">
-        <div class=\"modal-dialog modal-sm\">
-          <div class=\"modal-content\">
-            Post Deleted!
-          </div>
-        </div>
-      </div>";
-
-        return redirect('/dashboard')->with($modal);
+        return redirect('/dashboard')->with('success', 'Post Removed');
     }
 }
