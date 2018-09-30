@@ -53,7 +53,7 @@
                                             </div>
                                             <div style=" margin: 0 auto; ">
                                                 <a href="/posts/{{$post->id}}"><h3 style="text-align:center; padding-top: 10px;">{{$post->title}}</h3></a>
-                                                <h5 style="text-align:center;">₱ {{$post->price}}/hr</h5>
+                                                <h5 style="text-align:center;">₱ {{$post->price}} per day</h5>
 
                                            </div>
                                            <div style="text-align:center; margin: 0 auto;">
@@ -167,7 +167,7 @@
                             </a>
                         </li>
 
-                        <li class="p-b-9">
+                        <!-- <li class="p-b-9">
                             <a href="#" class="s-text7">
                                 Returns
                             </a>
@@ -183,7 +183,7 @@
                             <a href="#" class="s-text7">
                                 FAQs
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
 
