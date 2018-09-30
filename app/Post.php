@@ -31,4 +31,12 @@ class Post extends Model
         $result = $query->where('category', 'like', '%' .$search_category. '%');
         return $result;
     }
+
+    //search the location
+    public function scopeLocation($query, $search_location){
+
+        // $search_location = Input::get('search_location$search_location'); 
+        $result = $query->where('location', 'like', '%' .$search_location. '%');
+        return $result;
+    }
 }
