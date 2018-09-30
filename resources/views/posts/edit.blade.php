@@ -81,10 +81,32 @@
                 </br>
                 <center>
                     <div>
-                        <div class="row">
-                            <div class="col s12 m6"> 
-                                {{Form::file('cover_image', ['accept' => 'image/*'])}}
-                            </div>
+                    <div class="row">
+                                <div class="col s12 m6">
+                                
+                                 Choose an image (Max file size: 1mb)
+                                 </br>
+                                 Choose at least one image 
+                                          </br></br>
+                                 </div>
+                                 <div class="col s12 m6">
+
+                                 <ul>
+
+                                         <li>                                 {{Form::file('cover_image', ['required' => 'required'])}}
+
+                                         </li>
+                                          </br>
+                                         <li>                                 {{Form::file('image1')}}
+
+                                         </li>
+                                         </br>
+                                         <li>                                 {{Form::file('image2')}}
+
+                                         </li>
+                                 </ul>
+                                 </div>
+                                
                         </div>
                     </div>
                 </center>
