@@ -70,8 +70,8 @@
                 <div >
                          <div class="row">
                                 <div class="col s12 m6">
-                                </br>
-                                 {{-- Choose an image --}}
+                                
+                                 Choose an image (Max file size: 1mb)
                                  </br>
                                  </div>
                                  <div class="col s12 m6">
