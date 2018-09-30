@@ -43,7 +43,10 @@
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
             <h1>{{$post->title}}</h1>
-                <a href="/profiles/{{$post->user_id}}">Owner {{$post->user->name}}</a>
+                {{-- <a href="/profiles/{{$post->user_id}}">Owner {{$post->user->name}}</a> --}}
+                <small>Owner:</small>
+                </br>
+                <small>{{$post->user->name}}</small>
             </br>
             </br>
             <div> 
