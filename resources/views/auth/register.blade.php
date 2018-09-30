@@ -71,7 +71,7 @@
                         <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
 
                             <div class="col-md-6">
-                                <input id="birthday" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="age" required>
+                                <input id="birthday" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="birthday" required>
                             </div>
                         </div>
 
@@ -80,13 +80,13 @@
                         <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
 
                             <div class="col-md-3">
-                            <input style="margin:auto 0;" type="radio" name="agree" required>Male  
+                            <input style="margin:auto 0;" type="radio" name="sex" required>Male  
                                 </div>
                                 <div class="col-md-3">
-                            <input style="margin:auto 0;" type="radio" name="agree" required>Female
+                            <input style="margin:auto 0;" type="radio" name="sex" required>Female
                             </div>
                         </div>
-                        
+
                         <!--Password-->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
