@@ -53,7 +53,7 @@
                                             </div>
                                             <div style=" margin: 0 auto; ">
                                                 <a href="/posts/{{$post->id}}"><h3 style="text-align:center; padding-top: 10px;">{{$post->title}}</h3></a>
-                                                <h5 style="text-align:center;">₱ {{$post->price}} per day</h5>
+                                                <h5 style="text-align:center;">₱ {{$post->price_per_day}} per day</h5>
 
                                            </div>
                                            <div style="text-align:center; margin: 0 auto;">
