@@ -61,23 +61,19 @@
                         {{ Form::radio('category', 'General Supplies' , false) }}General Supplies
                         </div>
                         </div>
-                        
                 </div>
                 </br>
                 <div >
                          <div class="row">
                                 <div class="col s12 m6">
                                 </br>
-                                 Choose an image
+                                 {{-- Choose an image --}}
                                  </br>
                                  </div>
                                  <div class="col s12 m6">
-                                 {{Form::file('cover_image' , ['required' => 'required'])}}
+                                 {{Form::file('cover_image', ['required' => 'required'])}}
                                  </div>
-                                 
                         </div>
-
-               
                 </div>
                         </br>
                 <div class="form-group">

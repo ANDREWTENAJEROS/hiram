@@ -45,7 +45,6 @@
                                 {{Form::label('price', 'Price per day')}}
                                 {{Form::text('price', $post->price, ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
-                       
                 </div>
                 <div class="input-100">
                 </br>
