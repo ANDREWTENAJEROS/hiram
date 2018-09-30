@@ -37,4 +37,24 @@ class PageController extends Controller
         $title = 'Search items on Hiram';
         return view('pages.search')->with('title', $title);
     }
+
+    public function report_user(){
+        $title = 'Report User';
+        return view('pages.report_user')->with('title', $title);
+    }
+
+    public function report_item(){
+        $title = 'Report Item';
+        return view('pages.report_item')->with('title', $title);
+    }
+
+    public function reports(){
+        $title = 'Reports';
+        return view('pages.reports')->with('title', $title);
+    }
+
+    public function lend(){
+        $title = 'lend';
+        return view('pages.lend')->with('title', $title);
+    }
 }

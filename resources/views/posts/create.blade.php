@@ -8,6 +8,55 @@
 	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/util.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+    require("firebase/firestore");
+
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBelquR5Gju6r08rwM1Eqng5rDc0ucAzM0",
+        authDomain: "hiram-b883d.firebaseapp.com",
+        databaseURL: "https://hiram-b883d.firebaseio.com",
+        projectId: "hiram-b883d",
+        storageBucket: "hiram-b883d.appspot.com",
+        messagingSenderId: "925777659021"
+    };
+    
+    firebase.initializeApp(config);
+
+
+    </script>
+        <script src="js/main.js"></script>
+        <script>
+                var uploader = document.getElementById('cover_image');
+                var filebutton = document.getElementById('fileButton');
+
+                fileButton.addEventListener('change', function(e){
+                           var file = e.target.file[0];   
+                           
+                           firebase.storage().ref('my-file/' + file.name);
+
+                           var task = storageRef.put(file);
+
+                           task.on('state_changed',
+                        
+                                function progress(snapshot){
+                                        var percentage =( snapshot.bytesTramsferred / snapshot.totalBytes ) * 100;
+                                        uploader.value = percentage;
+                                },
+
+                                function error(err){
+
+                                },
+
+                                function complete(){
+
+                                }
+                        )
+                });
+        </script>
+
     <div class="jumbotron text-center">
         <h1>Upload Product to Lend</h1>
         
@@ -72,7 +121,8 @@
                                  </br>
                                  </div>
                                  <div class="col s12 m6">
-                                 {{Form::file('cover_image' , ['required' => 'required'])}}
+                                 <progress value="0" max="100" id=uploader>0%</progress>
+                                 <input type="file" value="cover_images" id="fileButton"/>
                                  </div>
                                  
                         </div>

@@ -13,3 +13,8 @@ Route::get('/dashboard','DashboardController@index');
 
 Route::get('/sample', 'SampleController@view');
 Route::get('/policy', 'PageController@policy');
+
+Route::get('/report_user', 'PageController@report_user');
+Route::get('/report_item', 'PageController@report_item');
+Route::get('/reports', 'PageController@reports');
+Route::get('/lend', 'PageController@lend');

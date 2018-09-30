@@ -312,3 +312,29 @@
     });
 
 })(jQuery);
+
+function uploadFile(){
+
+    var file = selected.name;   
+                           
+    var storageRef = firebase.storage().ref('my-file/' + file.name);
+
+    var task = storageRef.put(file);
+
+    task.on('state_changed',
+ 
+         function progress(snapshot){
+                 var percentage =( snapshot.bytesTramsferred / snapshot.totalBytes ) * 100;
+                 uploader.value = percentage;
+         },
+
+         function error(err){
+
+         },
+
+         function complete(){
+             var downloadurl = task.snapshot.downloadurl;
+                 console.log(downloadurl);
+         }
+ );
+            }

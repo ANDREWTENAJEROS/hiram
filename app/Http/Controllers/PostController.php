@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\User;
+use Kreait\Firebase;
+
 
 class PostController extends Controller
 {
@@ -66,7 +68,6 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'cover_image' => 'required',
             'price' => 'required',
             'condition' => 'required',
             'category' => 'required'
@@ -102,12 +103,12 @@ class PostController extends Controller
         $post->category = $request->input('category');
         $post->user_id = auth()->user()->id;
 
-        $imageURL = request()->file('cover_image')->store(
-            'my-file',
-            's3'
-        );
-
-        $post->cover_image = $imageURL;
+        // $imageURL = request()->file('cover_image')->store(
+        //     'my-file',
+        //     's3'
+        // );
+        
+        $post->cover_image = "none";
         $post->save();
 
         return redirect('/dashboard')->with('success', 'Post Created');
