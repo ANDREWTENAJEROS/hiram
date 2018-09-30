@@ -35,9 +35,18 @@
     <!-- class="col s12 m6" -->
             <div  style="margin: 0 auto;" class="col s12 m6">
             </br>
-        <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
-
+            <ul>
+                <li>
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+                </li>
+                <li>
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image1}}" />
+                </li>
+                <li>
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image2}}" />
+                </li>
                  </br>
+</ul>   
             </div>
         <br><br>
         <div class="col s12 m6" style=" margin: 0 auto;">
