@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('price_per_hour')->nullable();
             $table->string('condition', 1500);
             $table->string('category', 1500);
-            $table->integer('location')->nullable();
+            $table->string('location')->nullable();
             $table->string('cover_image');
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();
