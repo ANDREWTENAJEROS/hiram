@@ -69,10 +69,10 @@
                         
 
                             <div class="form-group row ">
-                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="age" type="number" style="width:40%; padding-left: 25px;padding-right: 20px;" class="input100" name="age" required>
+                                    <input id="birthday" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="age" required>
                                 </div>
                             </div>
 

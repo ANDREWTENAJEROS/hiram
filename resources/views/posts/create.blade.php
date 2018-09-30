@@ -34,7 +34,7 @@
 
                 <div class="row">
                         <div class="col s12 m6">
-                                {{Form::label('price', 'Price per hour')}}
+                                {{Form::label('price', 'Price per day')}}
                                 {{Form::text('price', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
                         
