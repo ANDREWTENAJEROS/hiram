@@ -43,7 +43,6 @@
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
             <h1>{{$post->title}}</h1>
-                <a href="/profiles/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             </br>
             </br>
             <div> 
@@ -56,6 +55,14 @@
             </hr>
             </br>
                 <small>{{$post->category}}</small>
+            </div>
+            
+            <hr>
+               <small>Location:</small>
+            </hr>
+            </br>
+            <div>
+                <small>{{$post->location}}</small>
             </div>
             <hr>
             <small>Terms and Conditions: </br> {{$post->condition}}</small>

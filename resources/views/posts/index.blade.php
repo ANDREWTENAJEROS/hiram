@@ -52,14 +52,13 @@
                                                 </div>
                                             </div>
                                             <div style=" margin: 0 auto; ">
-                                                <a href="/posts/{{$post->id}}"><h4 style="text-align:center; padding-top: 10px;">{{$post->title}}</h4></a>
-                                                <h6 style="text-align:center;">₱ {{$post->price_per_day}} per day</h6>
-                                                <h6 style="text-align:center;">₱ {{$post->price_per_hour}} per hour</h6>
+                                                <a href="/posts/{{$post->id}}"><h5 style="text-align:center; padding-top: 10px;">{{$post->title}}</h5></a>
+                                                    <small>{{$post->location}}</small>
 
 
                                            </div>
                                            <div style="text-align:center; margin: 0 auto;">
-                                           <small>Posted by {{$post->user->name}}</small>
+                                           <small>₱ {{$post->price_per_day}} per day | ₱ {{$post->price_per_hour}} per hour</small>
                                            </div>
                                         </div>
                                     </div>

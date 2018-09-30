@@ -46,7 +46,13 @@
         <script src="vendor/select2/select2.min.js"></script>
         
         <script src="js/main.js"></script>
-
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9197878935414975",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
 <body>
     <div id="app">

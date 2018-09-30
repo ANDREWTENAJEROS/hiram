@@ -29,6 +29,11 @@
                 {{Form::label('body', 'Description and specifications')}}
                 {{Form::textarea('body', '', ['rows' => '3', 'required' => 'required','class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
                 </div>
+                <div class="input-100">
+                </br>
+                {{Form::label('location', 'Location')}}
+                {{Form::text('location', '', ['class' => 'input100','required' => 'required', 'placeholder' => 'City/zipcode'])}}
+                </div>
                 </br>
                 <h3>Rental Rates</h3>	
 
