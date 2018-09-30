@@ -17,7 +17,6 @@
                             @csrf
                             
                         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                                <!-- <input class="input100" id="email" type="email"  name="email" value="{{ old('email') }}" required autofocus> -->
                                 <input class="input100" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))

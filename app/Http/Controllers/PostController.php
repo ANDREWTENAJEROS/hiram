@@ -85,9 +85,7 @@ class PostController extends Controller
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             //Upload image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
-            
             // $path = $request->file('cover_image')->storeAs('../storage/app/public/cover_images', $fileNameToStore);
-
         }else{
             $fileNameToStore = 'noimage.jpg';
         }
@@ -159,7 +157,7 @@ class PostController extends Controller
             'condition' => 'required',
             'category' => 'required'
         ]);
-
+    /*
         //Handler file upload
         if($request->hasFile('cover_image')){
             //Get filenname with the extension
@@ -173,6 +171,7 @@ class PostController extends Controller
             //Upload image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         }
+    */
 
         //Update Post
         $post = Post::find($id);
@@ -181,9 +180,15 @@ class PostController extends Controller
         $post->price = $request->input('price');
         $post->condition = $request->input('condition');
         $post->category = $request->input('category');
+
         if($request->hasFile('cover_image')){
-            $post->cover_image = $fileNameToStore;
-        }
+        $imageURL = request()->file('cover_image')->store(
+            'my-file',
+            's3'
+        );
+        $post->cover_image = $imageURL;
+    }
+        
         $post->save();
 
         return redirect('/dashboard')->with('success', 'Post Updated');
@@ -203,13 +208,17 @@ class PostController extends Controller
         if(auth()->user()->id !==$post->user_id){
             return redirect('/posts')->with('error', 'Unauthorized Page');
         }
-        
-        if($post->cover_image != 'noimage.jpg'){
-            //Delete image
-            Storage::delete('public/cover_images/'.$post->cover_image);
-        }
 
         $post->delete();
-        return redirect('/dashboard')->with('success', 'Post Removed');
+
+        $modal = "<div class=\"modal fade bd-example-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\">
+        <div class=\"modal-dialog modal-sm\">
+          <div class=\"modal-content\">
+            Post Deleted!
+          </div>
+        </div>
+      </div>";
+
+        return redirect('/dashboard')->with($modal);
     }
 }

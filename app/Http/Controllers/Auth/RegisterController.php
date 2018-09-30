@@ -64,7 +64,6 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            // 'mobile' => 'required|min:11|max:13',
         ]);
     }
 
@@ -81,13 +80,7 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            // 'mobile' => $data['mobile'],
-            // 'active' => 0,
         ]);
-
-        // if($user){
-        //     $user->code = \App\SendCode::sendCode($user->mobile);
-        //     $user->save();
-        // }
     }
+
 }

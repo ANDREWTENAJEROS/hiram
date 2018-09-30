@@ -68,7 +68,7 @@
                          <div class="row">
                                 <div class="col s12 m6">
                                 </br>
-                                 Chooese an image
+                                 Choose an image
                                  </br>
                                  </div>
                                  <div class="col s12 m6">

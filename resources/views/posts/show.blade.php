@@ -78,19 +78,39 @@
                         </button>
                     </a>
                 </div>
-
+                
+                <!-- Button trigger modal -->
                 <div class="col s12 m6">
-                        <!-- {{Form::submit('DELETE', ['class' => 'login100-danger-btn'])}} -->
-                        <a>
-                            {!!Form::open(['action' => ['PostController@destroy', $post->id], 'method' => 'POST'])!!} 
-                            <button class="login100-danger-btn">
-                                {{Form::hidden('_method', 'DELETE')}}
-                                DELETE
-                                {!!Form::close()!!}
-                            </button>
-                        </a>
+                    <a>
+                        <button type="button" class="login100-danger-btn" data-toggle="modal" data-target="#exampleModal">
+                                Delete
+                        </button>
+                    </a>
                 </div>
-
+                        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are your sure you want to delete this post?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                {!!Form::open(['action' => ['PostController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                    {{Form::hidden('_method', 'DELETE')}}
+                                    {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                                {!!Form::close()!!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             </br> </br>
@@ -138,4 +158,6 @@
                 </div>
                 </br> </br>
     @endif    
+    @include('inc.footer')
+    </footer>
 @endsection

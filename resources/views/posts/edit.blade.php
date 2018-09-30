@@ -55,7 +55,7 @@
                 <div class="input-100">
                 </br>
                 {{Form::label('category', 'Category')}}
-                        <div class="row">
+                    <div class="row">
                         <div class="col s12 m3">
                         {{ Form::radio('category', 'Books and references' , false) }}Books and references
                         </div>
@@ -68,24 +68,20 @@
                         <div class="col s12 m3">
                         {{ Form::radio('category', 'General Supplies' , true) }}General Supplies
                         </div>
-                        </div>
+                    </div>
                 </div>
                 </br>
-                <div >
-                         <div class="row">
-                                <div class="col s12 m6">
-                                 Chooese an image
-                                 </div>
-                                 <div class="col s12 m6">
-                                 {{Form::file('cover_image', ['required' => 'required'])}}
-                                 </div>
-                                 
+                <center>
+                    <div>
+                        <div class="row">
+                            <div class="col s12 m6"> 
+                                {{Form::file('cover_image', ['accept' => 'image/*'])}}
+                            </div>
                         </div>
-
-               
-                </div>
-                        </br>
-        {{Form::hidden('_method', 'PUT')}}
-        {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
-    {!! Form::close() !!}
+                    </div>
+                </center>
+                </br>
+                {{Form::hidden('_method', 'PUT')}}
+                {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
+            {!! Form::close() !!}
 @endsection

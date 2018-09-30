@@ -1,9 +1,15 @@
-@if(count($posts) > 0)
+@extends('layouts.app')
 
-    @foreach($posts as $post)
-        <h1>{{$post->user_id}}</h1>
-    @endforeach
+@section('content')
 
-@else
-<h3>No post found</h3>
-@endif
+    @if(count($posts) > 0)
+
+        @foreach($posts as $post)
+            <h1>{{$post->user_id}} post {{$post->id}}</h1>
+        @endforeach
+
+    @else
+        <h3>No post found</h3>
+    @endif
+    
+@endsection
