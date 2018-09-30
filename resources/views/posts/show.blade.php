@@ -49,8 +49,13 @@
             <div> 
             <small>{{$post->body}}</small>
                 <hr><small>Price per hour {{$post->price_per_hour}} | Price per day {{$post->price_per_hour}}</small>
-                </br>
-                <small>Category {{$post->category}}</small>
+            </hr>
+            </br>
+            <hr>
+               <small>Category:</small>
+            </hr>
+            </br>
+                <small>{{$post->category}}</small>
             </div>
             <hr>
             <small>Terms and Conditions: </br> {{$post->condition}}</small>
