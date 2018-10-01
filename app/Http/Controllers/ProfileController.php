@@ -8,6 +8,10 @@ use App\User;
 
 class ProfileController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function profile($user_id){
        
         $posts = Post::orderBy('created_at', 'asc')->paginate(8);

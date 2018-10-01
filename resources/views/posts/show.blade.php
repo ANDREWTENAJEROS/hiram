@@ -32,9 +32,11 @@
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
             <h1>{{$post->title}}</h1>
-            @if(Auth::user()->id == $post->user->id)
+            @if(Auth::guest())
+                <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
+            @elseif(Auth::user()->id == $post->user->id)
                 <a href="/dashboard">Owner {{$post->user->name}}</a>
-                @else
+            @else
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             @endif
                 {{-- <small>Owner:</small>
