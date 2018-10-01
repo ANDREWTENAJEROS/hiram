@@ -27,7 +27,7 @@
                 <div class="input-100">
                 </br>
                 {{Form::label('body', 'Description and specifications')}}
-                {{Form::textarea('body', '', ['rows' => '3', 'required' => 'required','class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
+                {{Form::textarea('body', '', ['rows' => '3', 'style'=>'height: 80px; height: 140px;padding-left: 30px;padding-top: 10px;' , 'required' => 'required','class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '700', 'placeholder' => 'Description'])}}
                 </div>
                 <div class="input-100">
                 </br>
@@ -46,12 +46,13 @@
                                 {{Form::label('price', 'Price per day')}}
                                 {{Form::text('price_per_day', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
-                        
                 </div>
+                <!-- <small>Price per day = ( Original price / item lifetime ) * comission % </small> -->
+
                 <div class="input-100">
                 </br>
                 {{Form::label('Terms and Conditions', 'Terms and Conditions')}}
-                {{Form::textarea('condition', '', ['rows' => '3', 'required' => 'required', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '1800', 'placeholder' => 'Use of item, condition of item, return of item, charges and payments, general provisions, privacy and protection'])}}
+                {{Form::textarea('condition', '', ['rows' => '3', 'style'=>'height: 140px;height: 140px;padding-left: 30px;padding-top: 10px;','value'=> 'The payment must be received before giving the item. Additional fee of "deposit price" for the insurance deposit will be given back after the item is returned with no issues. The rentee must replace the damaged/lost parts or buy the item. The item should be handled with care and kept away from water and children. The device is in good condition with no cosmetic defects.' , 'required' => 'required', 'class' => 'input100', 'data-validate-minlength' => '40', 'data-validate-mexlength' => '1800', 'placeholder' => 'Use of item, condition of item, return of item, charges and payments, general provisions, privacy and protection'])}}
                 </div>
                 <div class="input-100">
                 </br>
@@ -78,7 +79,7 @@
                                 
                                  Choose an image (Max file size: 1mb)
                                  </br>
-                                 Choose at least one image 
+                                 Upload at least one image 
                                           </br></br>
                                  </div>
                                  <div class="col s12 m6">
