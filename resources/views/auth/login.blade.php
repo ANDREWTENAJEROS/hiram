@@ -1,7 +1,7 @@
 <!-- @extends('layouts.app') -->
 
 @section('content')
-  
+@include('inc.navbarcss')
         
         <div class="container">
                 <div class="row justify-content-center">

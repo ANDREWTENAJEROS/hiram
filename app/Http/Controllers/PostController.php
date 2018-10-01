@@ -121,7 +121,7 @@ class PostController extends Controller
         $post->cover_image = $imageURL;
         $post->save();
 
-        return redirect('/dashboard')->with('success', 'Post Created');
+        return redirect('/dashboard')->with('success', 'New Item Created');
     }
 
     /**
@@ -219,7 +219,7 @@ class PostController extends Controller
         
         $post->save();
 
-        return redirect('/dashboard')->with('success', 'Post Updated');
+        return redirect('/dashboard')->with('success', 'Item Updated');
     }
 
     /**
@@ -239,6 +239,6 @@ class PostController extends Controller
 
         $post->delete();
 
-        return redirect('/dashboard')->with('success', 'Post Removed');
+        return redirect('/dashboard')->with('success', 'Item Removed');
     }
 }

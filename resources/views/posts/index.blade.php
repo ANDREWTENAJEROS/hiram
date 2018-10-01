@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    @include('inc.navbarcss')
     <body class="animsition">
-
-     
                         </div>
                     </div>
                 </div> 

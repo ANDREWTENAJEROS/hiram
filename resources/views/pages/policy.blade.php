@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('inc.navbarcss')
     @if(!Auth::guest())
         <div class="jumbotron text-center">
             <h1>{{$title}}</h1>
