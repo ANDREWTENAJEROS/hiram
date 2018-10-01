@@ -17,13 +17,13 @@
             </br>
             <ul>
                 <li>
-             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" alt=""/>
                 </li>
                 <li>
-             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image1}}" />
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image1}}" alt=""/>
                 </li>
                 <li>
-             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image2}}" />
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image2}}" alt=""/>
                 </li>
                  </br>
 </ul>   
@@ -137,7 +137,7 @@
                 </div>
                 
                 <div class="col s12 m6">
-                    <a href="sms:{{$post->user->mobile}}?body=hi {{$post->user->name}}, This is {{(Auth::user()->name)}} and I am interested on renting your {{$post->title}}">
+                    <a href="sms:{{$post->user->mobile}}?body=Hi {{$post->user->name}}, This is {{(Auth::user()->name)}} and I am interested on renting your {{$post->title}}">
                         <button class= "login100-form-btn">
                             MESSAGE
                         </button>
@@ -146,14 +146,23 @@
                 
             </div> 
             <br>
-            <div class="col s12 m6 centered" style="width: 80%">
-                
-                <a href="/about">
-                    <button class= "login100-form-btn">
-                        REPORT
+            <div class="row">
+            <div class="col s12 m6">
+                    <a href="mailto:{{$post->user->email}}?body=Hi {{$post->user->name}}, This is {{(Auth::user()->name)}} and I am interested on renting your {{$post->title}}">
+                        <button class= "login100-form-btn">
+                            e-mail
+                        </button>
+                    </a>
+                </div>
+                <div class="col s12 m6">
+                <a href="mailto:hiramph.online@gmail.com?body= Report {{$post->user->name}}'s item: {{$post->title}}, from {{(Auth::user()->name)}} ">
+                        <button class= "login100-danger-btn">
+                            Report
                     </button>
-                </a>
-            </div>
+                    </a>
+                    </div>
+                    </div>
+            
             </br> </br>
         @endif
     @else
