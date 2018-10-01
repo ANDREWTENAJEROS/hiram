@@ -6,7 +6,7 @@
 			<div class="wrap_header" style=" position: fixed !important; ">
 				<!-- Logo -->
 				<a href="/posts" class="logo">
-					<img src="../../images/icons/logo.png" alt="H I R A M">
+                <img src="../../images/icons/logo.png" alt="H I R A M">
 				</a>
                 @guest
 				<!-- Menu -->
@@ -36,8 +36,9 @@
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-					<a href="{{ route('login') }}" class="header-wrapicon1 dis-block">
-						<img src="../../images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                    <a href="{{ route('login') }}" class="header-wrapicon1 dis-block">
+                        Guest
+                        <img src="../../images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 					</a>
 
 					<span class="linedivide1"></span>
@@ -71,8 +72,9 @@
 					<div class="header-icons">
 
                        
-					<a href="/dashboard" class="header-wrapicon1 dis-block">
-						<img src="../../images/icons/icon-header-01.png" class="header-icon1" alt="Dashboard">
+                    <a href="/dashboard" class="header-wrapicon1 dis-block">
+                        {{(Auth::user()->name)}}
+                        <img src="../../images/icons/icon-header-01.png" class="header-icon1" alt="Dashboard">
 					</a>
 
                     <span class="linedivide1"></span>
