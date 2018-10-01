@@ -80,7 +80,6 @@
                                  <div class="col s12 m6">
 
                                  <ul>
-
                                          <li>                                 {{Form::file('cover_image', ['required' => 'required'])}}
 
                                          </li>
