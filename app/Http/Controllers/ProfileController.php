@@ -21,4 +21,54 @@ class ProfileController extends Controller
         
         return view('profiles.profile')->with('posts', $user->posts);
     }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $user->id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+
+        return view('profiles.edit')->with('user', $user);
+    }
+
+    public function update(Request $request, $id){
+
+        $user = User::find($id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $user->id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+
+        $this->validate($request, [
+            'mobile' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'birthday' => 'required',
+            'sex' => 'required',
+        ]);
+        
+        //Update Profile
+        $user = User::find($id);
+        $user->mobile = $request->input('mobile');
+        $user->email = $request->input('email');
+        $user->address = $request->input('address');
+        $user->birthday = $request->input('birthday');
+        $user->sex = $request->input('sex');
+        
+        if($request->hasFile('profile_image')){
+            $imageURL = request()->file('profile_image')->store(
+                'my-file',
+                's3'
+            );
+            $user->profile_image = $imageURL;
+        } 
+        
+        $user->save();
+
+        return redirect('/dashboard')->with('success', 'Profile Updated');
+    }
 }

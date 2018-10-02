@@ -12,6 +12,18 @@
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
+                        <div >
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <ul>
+                                        <li>                                 
+                                            {{Form::file('profile_image', ['required' => 'required'])}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         <!--Name-->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Full name') }}</label>
