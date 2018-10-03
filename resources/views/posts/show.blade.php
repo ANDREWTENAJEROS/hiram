@@ -46,7 +46,7 @@
             </br>
             <div> 
             <small>{{$post->body}}</small>
-                <hr><small>Price per hour {{$post->price_per_hour}}</small>
+                <hr><small>Price per day {{$post->price_per_day}}</small>
             </hr>
             </br>
             <hr>

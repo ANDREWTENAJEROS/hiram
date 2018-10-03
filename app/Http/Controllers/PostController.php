@@ -100,6 +100,8 @@ class PostController extends Controller
         $post->condition = $request->input('condition');
         $post->category = $request->input('category');
         $post->user_id = auth()->user()->id;
+        $post->location = $request->input('location');
+        $post->deposit = $request->input('deposit');
 
         $imageURL = request()->file('cover_image')->store(
             'my-file',
@@ -236,14 +238,17 @@ class PostController extends Controller
                 $post->body = $request->input('body');
                 $post->price_per_day = $request->input('price_per_day');
                 // $post->price_per_hour = $request->input('price_per_hour');
+                $post->location = $request->input('location');
                 $post->condition = $request->input('condition');
                 $post->category = $request->input('category');
+                $post->deposit = $request->input('deposit');
 
                 if($request->hasFile('cover_image')){
                     $imageURL = request()->file('cover_image')->store(
                         'my-file',
                         's3'
                     );
+                    $post->cover_image = $imageURL;
                 }
                 
                 if($request->hasFile('image1')){
@@ -262,7 +267,6 @@ class PostController extends Controller
                     $post->image2 = $imageURL2;
                 }
                 
-                $post->cover_image = $imageURL;
                 $post->save();
 
                 return redirect('/dashboard')->with('success', 'Item Updated');
