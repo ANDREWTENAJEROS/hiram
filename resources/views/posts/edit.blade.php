@@ -69,7 +69,7 @@
 
                                  <ul>
 
-                                         <li>                                 {{Form::file('cover_image', ['required' => 'required'])}}
+                                         <li>                                 {{Form::file('cover_image')}}
 
                                          </li>
                                           </br>
