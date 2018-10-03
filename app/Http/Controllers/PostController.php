@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\User;
+use App\Report;
 
 class PostController extends Controller
 {
@@ -96,7 +97,6 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->price_per_day = $request->input('price_per_day');
-        $post->price_per_hour = $request->input('price_per_hour');
         $post->condition = $request->input('condition');
         $post->category = $request->input('category');
         $post->user_id = auth()->user()->id;
@@ -106,18 +106,23 @@ class PostController extends Controller
             's3'
         );
 
-        // $imageURL1 = request()->file('image1')->store(
-        //     'my-file',
-        //     's3'
-        // );
+        if($request->hasFile('image1')){
+            $imageURL1 = request()->file('image1')->store(
+                'my-file',
+                's3'
+            );
+            $post->image1 = $imageURL1;
+        }
 
-        // $imageURL2 = request()->file('image2')->store(
-        //     'my-file',
-        //     's3'
-        // );
+        if($request->hasFile('image2')){
+            $imageURL2 = request()->file('image2')->store(
+                'my-file',
+                's3'
+            );
+            $post->image2 = $imageURL2;
+        }
 
-        // $post->image1 = $imageURL1;
-        // $post->image2 = $imageURL2;
+        $post->report_id = 0;
         $post->cover_image = $imageURL;
         $post->save();
 
@@ -163,63 +168,105 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'body' => 'required',
-            'condition' => 'required',
-            'category' => 'required',
-            'location' => 'required',
-        ]);
-    /*
-        //Handler file upload
-        if($request->hasFile('cover_image')){
-            //Get filenname with the extension
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-            //Get just file name
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            //Get just extension
-            $extension = $request->file('cover_image')->getClientOriginalExtension();
-            //Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //Upload image
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
-        }
-    */
-
-        //Update Post
+        $count = 0;
         $post = Post::find($id);
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->price_per_day = $request->input('price_per_day');
-        $post->price_per_hour = $request->input('price_per_hour');
-        $post->condition = $request->input('condition');
-        $post->category = $request->input('category');
+        $report = Report::all();
+        $link = '/posts/' . $id;
 
-        if($request->hasFile('cover_image')){
-        $imageURL = request()->file('cover_image')->store(
-            'my-file',
-            's3'
-        );
+        //Check for correct user
+        if(auth()->user()->id !== $post->user_id){
 
+            foreach($report as $reports){
+
+                //Check if the user's already reported this post
+                if($reports->users_id == auth()->user()->id && $reports->posts_id == $id){
+                    $count += 1;
+                }
+            }
+            
+            if($count > 0){
+                return redirect($link)->with('error', 'asdasd');
+            } elseif($post->report_id == 9) {
+                $post->delete();
+
+                return redirect('/posts')->with('success', 'Item Deleted');
+            } else {
+                //Create new Report
+                $report = new Report;
+                $report->users_id = auth()->user()->id;
+                $report->posts_id = $id;
+                $report->save();
+
+                //Increment report_id
+                $post = Post::find($id);
+                $post->report_id += 1;
+                $post->save();
+
+                return redirect($link)->with('success', 'Post Reported');
+            }
+        } else {
+            
+                //Edit Post
+                $this->validate($request, [
+                    'title' => 'required',
+                    'body' => 'required',
+                    'condition' => 'required',
+                    'category' => 'required',
+                    'location' => 'required',
+                ]);
+            /*
+                //Handler file upload
+                if($request->hasFile('cover_image')){
+                    //Get filenname with the extension
+                    $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+                    //Get just file name
+                    $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                    //Get just extension
+                    $extension = $request->file('cover_image')->getClientOriginalExtension();
+                    //Filename to store
+                    $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                    //Upload image
+                    $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+                }
+            */
+
+                //Update Post
+                $post = Post::find($id);
+                $post->title = $request->input('title');
+                $post->body = $request->input('body');
+                $post->price_per_day = $request->input('price_per_day');
+                // $post->price_per_hour = $request->input('price_per_hour');
+                $post->condition = $request->input('condition');
+                $post->category = $request->input('category');
+
+                if($request->hasFile('cover_image')){
+                    $imageURL = request()->file('cover_image')->store(
+                        'my-file',
+                        's3'
+                    );
+                }
+                
+                if($request->hasFile('image1')){
+                    $imageURL1 = request()->file('image1')->store(
+                        'my-file',
+                        's3'
+                    );
+                    $post->image1 = $imageURL1;
+                }
         
-        // $imageURL1 = request()->file('image1')->store(
-        //     'my-file',
-        //     's3'
-        // );
+                if($request->hasFile('image2')){
+                    $imageURL2 = request()->file('image2')->store(
+                        'my-file',
+                        's3'
+                    );
+                    $post->image2 = $imageURL2;
+                }
+                
+                $post->cover_image = $imageURL;
+                $post->save();
 
-        // $imageURL2 = request()->file('image2')->store(
-        //     'my-file',
-        //     's3'
-        // );
-
-        // $post->image1 = $imageURL1;
-        // $post->image2 = $imageURL2;
-        $post->cover_image = $imageURL;
-    }
-        
-        $post->save();
-
-        return redirect('/dashboard')->with('success', 'Item Updated');
+                return redirect('/dashboard')->with('success', 'Item Updated');
+        }
     }
 
     /**

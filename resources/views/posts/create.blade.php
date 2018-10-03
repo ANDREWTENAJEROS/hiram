@@ -44,7 +44,7 @@
                         </div>
                         <div class="col s12 m6">
                                 {{Form::label('Insurance deposit', 'Insurance deposit')}}
-                                {{Form::text('price_per_day', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
+                                {{Form::text('deposit', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
                 </div>
                 <!-- <small>Price per day = ( Original price / item lifetime ) * comission % </small> -->

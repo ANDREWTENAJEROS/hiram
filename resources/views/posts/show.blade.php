@@ -50,7 +50,7 @@
             </hr>
             </br>
             <hr>
-            <hr><small>Insurance Deposit {{$post->price_per_day}}</small>
+            <hr><small>Insurance Deposit {{$post->deposit}}</small>
             </hr>
             </br>
             <hr>
@@ -161,14 +161,41 @@
                         </button>
                     </a>
                 </div>
+                
+                <!-- Button trigger modal -->
                 <div class="col s12 m6">
-                <a href="mailto:hiramph.online@gmail.com?body= Report {{$post->user->name}}'s item: {{$post->title}}, from {{(Auth::user()->name)}} ">
-                        <button class= "login100-danger-btn">
-                            Report
-                    </button>
+                    <a>
+                        <button type="button" class="login100-danger-btn" data-toggle="modal" data-target="#exampleModal">
+                                Report
+                        </button>
                     </a>
+                </div>
+                        
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Report Post</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are your sure you want to report this post?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                {!!Form::open(['action' => ['PostController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                    {{Form::hidden('_method', 'PUT')}}
+                                    {{Form::submit('Report', ['class' => 'btn btn-danger'])}}
+                                {!!Form::close()!!}
+                            </div>
+                        </div>
                     </div>
-                    </div>
+                </div>
+
+            </div>
             
             </br> </br>
         @endif

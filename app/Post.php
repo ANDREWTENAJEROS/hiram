@@ -17,6 +17,10 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function report(){
+        return $this->hasMany('App\Report');
+    }
+
     //search the product name 
     public function scopeSearch($query, $search_product){
         
