@@ -36,15 +36,4 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
-
-    public function getReset($token = null)
-    {
-        if (is_null($token))
-        {
-            throw new NotFoundHttpException;    
-        }
-
-        // Change this to whatever you want ;)
-        return view('auth.reset')->with('token', $token);
-    }
 }

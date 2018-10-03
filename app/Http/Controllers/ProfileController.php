@@ -14,9 +14,7 @@ class ProfileController extends Controller
 
     public function profile($user_id){
        
-        $posts = Post::orderBy('created_at', 'asc')->paginate(8);
-        $users = User::orderBy('name')->get();
-        
+        $posts = Post::latest()->paginate(8);
         $user = User::find($user_id);
         
         return view('profiles.profile')->with('posts', $user->posts);
@@ -70,5 +68,20 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect('/dashboard')->with('success', 'Profile Updated');
+    }
+
+    public function destroy($id){
+        $user = User::find($id);
+        $post = Post::select('id')->where('user_id', $id);
+
+        //Check for correct user
+        if(auth()->user()->id !== $user->id){
+            return redirect('/dashboard')->with('error', 'Unauthorized Page');
+        }
+
+        $post->delete();
+        $user->delete();
+
+        return redirect('/dashboard')->with('success', 'Profile Deleted!');
     }
 }

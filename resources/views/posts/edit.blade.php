@@ -96,14 +96,14 @@
                                 {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
                         </div>
                         <!-- Button trigger modal -->
-                <div class="col s12 m6">
+                        <div class="col s12 m6">
                                 <a>
                                 <button type="button" class="login100-danger-btn" data-toggle="modal" data-target="#exampleModal">
                                         Delete
                                 </button>
                                 </a>
                         </div>
-                                
+                                        
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
