@@ -17,7 +17,7 @@
                                 <div class="col s12 m6">
                                     <ul>
                                         <li>                                 
-                                            {{Form::file('profile_image', ['required' => 'required'])}}
+                                            {{Form::file('profile_image')}}
                                         </li>
                                     </ul>
                                 </div>
