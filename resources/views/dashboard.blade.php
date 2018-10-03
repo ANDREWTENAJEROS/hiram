@@ -15,7 +15,7 @@
                         </div>
                     @endif
                         @foreach($posts as $post)       
-                            <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}" />
+                            <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}"  alt=""/>
                         </br></br>
                             @break
                     @endforeach

@@ -38,7 +38,7 @@
 				<div class="header-icons">
                     <a href="{{ route('login') }}" class="header-wrapicon1 dis-block">
                         Guest
-                        <img src="../../images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                        <img src="../../images/icons/icon-header-01.png" style="    padding-left: 10px;" class="header-icon1" alt="ICON">
 					</a>
 
 					<span class="linedivide1"></span>
