@@ -90,8 +90,21 @@
                         </div>
                 </div>
                         </br>
+                        <div class="row">
+                        <div class="col s12 m6">
+                 {!!Form::open(['action' => ['PostController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                    {{Form::hidden('_method', 'DELETE')}}
+                                    {{Form::submit('Delete', ['class' => 'login100-danger-btn'])}}
+                                {!!Form::close()!!}
+                </div>
+
+                <div class="col s12 m6">
                 {{Form::hidden('_method', 'PUT')}}
                 {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
+
+                            </div>
+                            </div>
+
 </br> </br>
             {!! Form::close() !!}
 @endsection
