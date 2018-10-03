@@ -11,6 +11,33 @@
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2008481492505313&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<script type="text/javascript">(function(d, t, e, m){
+    
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+                
+        RW.init({
+            huid: "416621",
+            uid: "ae1f0e2b22bff82cbade96615846e26c",
+            options: { "style": "oxygen" } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+
     <div class="row">
     <!-- class="col s12 m6" -->
             <div  style="margin: 0 auto;" class="col s12 m6">
@@ -36,8 +63,11 @@
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             @elseif(Auth::user()->id == $post->user->id)
                 <a href="/dashboard">Owner {{$post->user->name}}</a>
+
             @else
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
+            </br>   <div class="rw-ui-container" data-title="{{$post->user->id}}"></div>
+
             @endif
                 {{-- <small>Owner:</small>
                 </br>
@@ -46,11 +76,10 @@
             </br>
             <div> 
             <small>{{$post->body}}</small>
-                <hr><small>Price per day {{$post->price_per_day}}</small>
+                <hr><small>Price per day ₱ {{$post->price_per_day}}</small>
             </hr>
             </br>
-            <hr>
-            <hr><small>Insurance Deposit {{$post->deposit}}</small>
+            <hr><small>Insurance Deposit ₱ {{$post->deposit}}</small>
             </hr>
             </br>
             <hr>
@@ -62,6 +91,8 @@
             
             <hr>
                <small>Location:</small>
+
+               <iframe width="100%" height="250" frameborder="0" style="border:0; margin-top:10px;" src="https://www.google.com/maps/embed/v1/place?q={{$post->location}}&key=AIzaSyDOBddUvKMDMhNKIc6eSrIOJJwsIlsfWOo" allowfullscreen></iframe>
             </hr>
             </br>
             <div>
