@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-@include('inc.navbarcss1')
-
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <div class="jumbotron text-center">
         <h1>Upload Product to Lend</h1>
         
@@ -26,19 +31,19 @@
                 </div>
                 <div class="input-100">
                 </br>
-                {{Form::label('location', 'Location')}}
+                {{Form::label('location', 'location')}}
                 {{Form::text('location', '', ['class' => 'input100','required' => 'required', 'placeholder' => 'City/zipcode'])}}
                 </div>
                 </br>
-                <h3>Rental Rates</h3>	
+                <!-- <h3>Rental Rates</h3>	 -->
 
                 <div class="row">
                         <div class="col s12 m6">
-                                {{Form::label('price', 'Price per hour')}}
-                                {{Form::text('price_per_hour', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
+                                {{Form::label('price', 'Price per day')}}
+                                {{Form::text('price_per_day', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
                         <div class="col s12 m6">
-                                {{Form::label('price', 'Price per day')}}
+                                {{Form::label('Insurance deposit', 'Insurance deposit')}}
                                 {{Form::text('price_per_day', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
                 </div>
@@ -80,6 +85,7 @@
                                  <div class="col s12 m6">
 
                                  <ul>
+
                                          <li>                                 {{Form::file('cover_image', ['required' => 'required'])}}
 
                                          </li>
