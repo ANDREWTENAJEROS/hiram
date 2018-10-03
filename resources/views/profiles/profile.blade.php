@@ -15,10 +15,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @foreach($posts as $post)
-                    <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}" />
+                    @foreach($user as $users)
+                    <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$users->profile_image}}" />
                     </br></br>
-                    <h3>This is {{$post->user->name}}!</h3> </br>
+                    <h3>This is {{$user->name}}!</h3> </br>
                     @break
                     @endforeach
                         <div class="row">

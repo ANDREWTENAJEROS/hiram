@@ -213,7 +213,6 @@ class PostController extends Controller
                     'title' => 'required',
                     'body' => 'required',
                     'condition' => 'required',
-                    'category' => 'required',
                     'location' => 'required',
                 ]);
             /*
