@@ -26,8 +26,12 @@
 
                 <div class="row">
                         <div class="col s12 m6">
-                                {{Form::label('price', 'Price per day')}}
-                                {{Form::text('price_per_day', $post->price_per_day, ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
+                                {{Form::label('price', 'Price per hour')}}
+                                {{Form::text('price_per_hour', $post->price_per_hour, ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
+                        </div>
+                        <div class="col s12 m6">
+                                {{Form::label('Insurance deposit', 'Insurance deposit')}}
+                                {{Form::text('deposit', '', ['class' => 'input100','required' => 'required', 'input type'=>'number', 'placeholder' => '₱'])}}
                         </div>
                 </div>
                 <!-- <small>Price per day = ( Original price / item lifetime ) * comission % </small> -->

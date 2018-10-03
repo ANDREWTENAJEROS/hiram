@@ -46,8 +46,11 @@
             </br>
             <div> 
             <small>{{$post->body}}</small>
+                <hr><small>Price per hour {{$post->price_per_hour}}</small>
+            </hr>
+            </br>
             <hr>
-            <small>Price per day: {{$post->price_per_day}}</small>
+            <hr><small>Insurance Deposit {{$post->deposit}}</small>
             </hr>
             </br>
             <hr>
@@ -71,13 +74,14 @@
             <small>Uploaded on {{$post->created_at}} </br> by {{$post->user->name}}</small>
             <hr>
             </br>
-            <div class="fb-like" style="width:100%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
-            <div class="fb-comments" style="width:90%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
-
+           
         </div>
     </div>
     @if(!Auth::guest())
      
+    <div class="fb-like" style="width:100%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
+            <div class="fb-comments" style="width:90%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
+
         @if(Auth::user()->id == $post->user->id)
 
             <div class="row">
@@ -195,6 +199,8 @@
             
             </br> </br>
         @endif
+
+        
     @else
     </br>
             <div class="col s12 m6">

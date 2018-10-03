@@ -30,9 +30,11 @@
 </br></br>
 <h4>Cancellation</h4> </br>- The renter can cancel the rented item anytime. The rentee will have to notify the renter two days before cancelling the reservation. 
 </br></br>
-<h4>Eligible items </h4></br>- items that are considered helpful for academic purposes are allowed to be put up for listing. All items must undergo the malicious detection system to be eligible for listing.
+<h4>Eligible items </h4></br>- items that are considered helpful for academic purposes are allowed to be put up for listing. All items could be reported by any users. An item reported ten times will be automatically deleted from  H I R A M without any notice. 
 </br></br>
 <h4>Pricing </h4></br>- The pricing for an item must conform the rental rate guideline which is the total cost of the ownership divided by expected rental lifetime multiplied by the profit of the rentee. The rental pricing for an item must conform the rental rate guideline which is the total cost of the ownership divided by expected rental lifetime multiplied by the profit percent for the rentee. 
+</br></br>
+<h4>Overdue</h4></br>- The lender can charge additional fee for overdue or items returned late. The price of the additional charge must be the price per day divided by the number of hour per day multiplied by the number of hours the renter is delayed on paying.
 </br></br>
 <h4>Right of usage </h4></br>- The renter can have full use of the item rented except for instances where there is an agreement to limit its use within the said parameters.
 </br></br>
