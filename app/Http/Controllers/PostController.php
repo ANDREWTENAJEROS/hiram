@@ -28,6 +28,7 @@ class PostController extends Controller
     {
         $search_product = $request->input('search_product');
         $search_category = $request->get('search_category');
+        $search_location = $request->input('search_location');
         // $posts = Post::all();
         // $posts = Post::orderBy('title', 'desc')->take(1)->get();
     
@@ -35,6 +36,7 @@ class PostController extends Controller
         $posts = Post::latest()
                 ->search($search_product)
                 ->category($search_category)
+                ->location($search_location)
                 ->paginate(8);
 
         // $posts = Post::orderBy('title', 'asc')->get();
