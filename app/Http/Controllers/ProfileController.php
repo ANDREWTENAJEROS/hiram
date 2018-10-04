@@ -46,7 +46,6 @@ class ProfileController extends Controller
             'email' => 'required',
             'address' => 'required',
             'birthday' => 'required',
-            'sex' => 'required',
         ]);
         
         //Update Profile
