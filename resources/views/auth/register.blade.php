@@ -121,7 +121,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
+                            <label for="" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
 
                             <div class="col-md-6">
                                 <input type="checkbox" class="filled-in" name="agree" required> I've read and understood hirams's <a href="/policy" target="_blank">Terms & Conditions</a>.
@@ -129,15 +129,15 @@
                         </div>
                         <div>
                         <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
-                        <script>
-                        grecaptcha.ready(function() {
-                            grecaptcha.execute('6Le2ZHMUAAAAAIThLAMlI6Zh2657LigDLxvInrtD', {action: 'homepage'}).then(function(token) {
-                                ...
-                            });
-                        });
-                        </script>
-                        <div class="g-recaptcha" data-sitekey="6Le2ZHMUAAAAAIThLAMlI6Zh2657LigDLxvInrtD"></div>
+                    
+                        <div class="form-group row">
+                            <label  class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
 
+                            <div class="col-md-6">
+                            <div class="g-recaptcha" data-sitekey="6Le2ZHMUAAAAAIThLAMlI6Zh2657LigDLxvInrtD"></div>
+
+                            </div>
+                        </div>
                       </div>    
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
