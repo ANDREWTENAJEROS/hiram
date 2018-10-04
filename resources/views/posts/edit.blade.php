@@ -94,6 +94,7 @@
                         <div class="col s12 m6">
                                 {{Form::hidden('_method', 'PUT')}}
                                 {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
+                                {!! Form::close() !!}
                         </div>
                         <!-- Button trigger modal -->
                         <div class="col s12 m6">
@@ -130,5 +131,4 @@
                 </div>
 
 </br> </br>
-{!! Form::close() !!}
 @endsection
