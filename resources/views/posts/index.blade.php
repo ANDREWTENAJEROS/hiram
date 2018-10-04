@@ -69,7 +69,7 @@
                         </div>
 
                         <!-- Pagination -->
-                        <div class="pagination flex-m flex-w p-t-26" style="margin-right:250px; ">
+                        <div class="pagination flex-m flex-w p-t-26" style="margin-right:190px; ">
                                {{$posts->links()}}		
                         </div>
                     </div>
