@@ -20,7 +20,9 @@
         <section class="bgwhite p-t-55 p-b-65" style="padding-top: 0px;">
       
             <div class="container" >
-                    @include('inc.sbar')
+            </br>
+                @include('inc.sbarlocation')
+                @include('inc.sbar')
                         
                 </br>       
                 

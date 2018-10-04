@@ -16,23 +16,26 @@
                         </div>
                     @endif
                     @foreach($posts as $post)
-                    <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}" />
-                    </br></br>
-                    <h3>This is {{$post->user->name}}!</h3> </br>
-                    @break
+                        <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}" />
+                        </br></br>
+                        <h3>This is {{$post->user->name}}!</h3> </br>
+                        @break
                     @endforeach
-                        <div class="row">
-                                <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
-					            	<img src="../../images/icons/icon-lend.png" class="header-icon1" alt="edit profile"></br>lend item</a> 
-                                </div>
-                                <div class="col s12 m3"> <a href="/about" class="header-wrapicon1 dis-block">
-					                <img src="../../images/icons/icon-report-01.png" class="header-icon1" alt="Report"> </br>report user </a> 
-                                </div><div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
-						<img src="../../images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
-               onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();"> </br>logout
-					</a> </div>
+                    <div class="row">
+                        <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
+                            <img src="../../images/icons/icon-lend.png" class="header-icon1" alt="edit profile"></br>lend item</a> 
                         </div>
+                        <div class="col s12 m3"> <a href="/about" class="header-wrapicon1 dis-block">
+                            <img src="../../images/icons/icon-report-01.png" class="header-icon1" alt="Report"> </br>report user </a> 
+                        </div>
+                        <div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
+                            <img src="../../images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> </br>logout </a> 
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                            </form>
+                    </div>
+            </div>
                         @if(count($posts) > 0)  
                         </br></br></br>
                         <div class="row justify-content-center">

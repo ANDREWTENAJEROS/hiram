@@ -21,20 +21,21 @@
                     @endforeach
                     <h3>Hi {{(Auth::user()->name)}}!</h3> </br>
                         <div class="row">
-                                <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
-					            	<img src="images/icons/icon-lend.png" class="header-icon1" alt="lend item"></br>lend item</a> 
-                                </div>
-                                @foreach($posts as $post)                                
-                                    <div class="col s12 m3"> <a href="/profiles/{{$post->user_id}}/edit" class="header-wrapicon1 dis-block">
-                                        <img src="images/icons/icon-header-01.png" class="header-icon1" alt="edit profile"></br>edit profile </a> 
-                                    </div>
-                                    @break
-                                @endforeach 
-                                <div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
-						<img src="images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
-               onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();"> </br>logout
-					</a> </div>
+                            <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
+                                <img src="images/icons/icon-lend.png" class="header-icon1" alt="lend item"></br>lend item</a> 
+                            </div>                               
+                            <div class="col s12 m3"> <a href="/profiles/{{auth()->user()->id}}/edit" class="header-wrapicon1 dis-block">
+                                <img src="images/icons/icon-header-01.png" class="header-icon1" alt="edit profile"></br>edit profile </a> 
+                            </div>
+                            <div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
+                                <img src="images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"> </br>logout
+                    </a> 
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                    </form>
+                    </div>
 
                         </div>
                         @if(count($posts) > 0)  
