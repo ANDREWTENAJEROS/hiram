@@ -54,13 +54,41 @@
         </br>
 
         <div class="row">
-            <div class="col m3 m6">
-                    {{Form::hidden('_method', 'PUT')}}
-                    {{Form::submit('Submit', ['class' => 'login100-form-btn'])}}
-                    </br> </br>
-                    {!! Form::close() !!}
+
+            {{-- Edit Modal --}}
+            <!-- Button trigger modal -->
+            <div class="col s12 m6">
+                    <a>
+                    <button type="button" class="login100-form-btn" data-toggle="modal" data-target="#exampleModal1">
+                            Save
+                    </button>
+                    </a>
             </div>
-            
+                            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1">Save</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            Save Changes?
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    {{Form::hidden('_method', 'PUT')}}
+                                    {{Form::submit('Save', ['class' => 'btn btn-primary'])}}
+                            {!! Form::close() !!}
+                            </div>
+                    </div>
+                    </div>
+            </div>
+        </br> </br>
+            {{-- Delete Modal --}}
              <!-- Button trigger modal -->
              <div class="col s12 m6">
                     <a>

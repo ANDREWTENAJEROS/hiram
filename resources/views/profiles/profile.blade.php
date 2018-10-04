@@ -25,9 +25,6 @@
                         <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
                             <img src="../../images/icons/icon-lend.png" class="header-icon1" alt="edit profile"></br>lend item</a> 
                         </div>
-                        <div class="col s12 m3"> <a href="/about" class="header-wrapicon1 dis-block">
-                            <img src="../../images/icons/icon-report-01.png" class="header-icon1" alt="Report"> </br>report user </a> 
-                        </div>
                         <div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
                             <img src="../../images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> </br>logout </a> 
