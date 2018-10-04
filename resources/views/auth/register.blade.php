@@ -134,7 +134,7 @@
                             <label  class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
 
                             <div class="col-md-6">
-                            <div class="g-recaptcha" data-sitekey="6Le2ZHMUAAAAAIThLAMlI6Zh2657LigDLxvInrtD"></div>
+                            <div class="g-recaptcha" style="width:90% margin:auto 0;" data-sitekey="6Le2ZHMUAAAAAIThLAMlI6Zh2657LigDLxvInrtD"></div>
 
                             </div>
                         </div>
