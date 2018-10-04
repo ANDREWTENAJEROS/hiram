@@ -19,19 +19,19 @@
         
         <section class="bgwhite p-t-55 p-b-65" style="padding-top: 0px;">
       
-            <div class="container" >
+            <div class="container" style="width:100%">
             </br>
                 @include('inc.sbarlocation')
                 @include('inc.sbar')
                         
                 </br>       
                 
-                <div class="row">
+                <div>
                 
                       <div>
 
                         <!-- Product -->
-                        <div class="row" style="margin-right: 0px; align:center; ">
+                        <div class="row" style="margin-right: 0px; align:center;">
                         </br>
                             @if(count($posts) > 0)
                                 @foreach($posts as $post)
