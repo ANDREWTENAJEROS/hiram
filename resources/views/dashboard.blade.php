@@ -13,12 +13,9 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-                        @foreach($posts as $post)       
-                            <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}"  alt=""/>
+                    @endif   
+                        <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{(Auth::user()->profile_image)}}"  alt=""/>
                         </br></br>
-                            @break
-                    @endforeach
                     <h3>Hi {{(Auth::user()->name)}}!</h3> </br>
                         <div class="row">
                             <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
