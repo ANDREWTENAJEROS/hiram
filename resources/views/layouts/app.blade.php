@@ -26,6 +26,9 @@
     enable_page_level_ads: true
   });
 </script>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 <body>
     <div id="app">

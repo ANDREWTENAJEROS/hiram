@@ -58,18 +58,41 @@
                 </br>
                 {{Form::label('category', 'Category')}}
                         <div class="row">
-                        <div class="col s12 m3">
-                        {{ Form::radio('category', 'Books and references' , false) }}Books and references
-                        </div>
-                        <div class="col s12 m3">
-                        {{ Form::radio('category', 'Devices and instruments' , false) }}Devices and instruments
-                        </div>
-                        <div class="col s12 m3">
-                        {{ Form::radio('category', 'Apparel and Accesories' , false) }}Apparel and Accesories
-                        </div>
-                        <div class="col s12 m3">
-                        {{ Form::radio('category', 'General Supplies' , false) }}General Supplies
-                        </div>
+                                <div class="col s3 m6">
+                                        <div class="row">
+                                        <div class="col s12 m3">
+                                                        <label>
+                                                        {{ Form::radio('category', 'Books and references' , false) }}
+                                                        <span>Books and references</span>
+
+                                                        </label>
+                                                </div>
+                                                <div class="col s12 m3">
+                                                <label>
+
+                                                {{ Form::radio('category', 'Devices and instruments' , false) }} <span>Devices and instruments</span>
+                                                        </label>
+                                                </div>
+                                             </div>
+                                  </div>
+                                  <div class="col s3 m6">
+                                  <div class="row">
+
+                                                 <div class="col s12 m6">
+                                                        <label>
+
+                                                        {{ Form::radio('category', 'Apparel and Accesories' , false) }} <span>Apparel and Accesories</span>
+                                                                </label>
+                                                        </div>
+                                                        <div class="col s12 m3">
+                                                        <label>
+
+                                                        {{ Form::radio('category', 'General Supplies' , false) }} <span>General Supplies</span>
+                                                                </label>
+                                                </div>
+
+                                          </div>
+                                  </div>
                         </div>
                 </div>
                 </br>

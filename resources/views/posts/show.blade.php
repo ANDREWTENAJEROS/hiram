@@ -106,13 +106,13 @@
             <hr>
             </br>
            
-        </div>
-    </div>
+       
     @if(!Auth::guest())
      
     <div class="fb-like" style="width:100%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-layout="button" data-action="recommend" data-size="large" data-show-faces="true" data-share="true"></div>
             <div class="fb-comments" style="width:90%;" data-href="http://hiram.herokuapp.com/posts/{{$post->id}}" data-numposts="4"></div>
-
+            </div>
+    </div>
         @if(Auth::user()->id == $post->user->id)
 
             <div class="row">
@@ -233,6 +233,8 @@
 
         
     @else
+    </div>
+    </div>
     </br>
             <div class="col s12 m6">
                     <a href="/login">
