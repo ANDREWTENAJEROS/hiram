@@ -8,6 +8,7 @@
                 </div> 
             </div>
         </header>   
+        <div class="container" >
         <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(images/heading-pages-02.jpg);">
             <h2 class="l-text2 t-center">
                 HIRAM
@@ -16,6 +17,7 @@
                 Rent items now!
             </p>
         </section>
+        </div>
         
         <section class="bgwhite p-t-55 p-b-65" style="padding-top: 0px;">
       
