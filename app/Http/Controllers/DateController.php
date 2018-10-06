@@ -13,7 +13,7 @@ class DateController extends Controller
 
         if($post->status == "Not Available"){
             $post->status = "Available";
-            $post->due_date = $request->input('due_date');
+            $post->due_date = "Not Set";
 
             $post->save();
         } else {

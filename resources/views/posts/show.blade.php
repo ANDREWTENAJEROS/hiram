@@ -73,7 +73,7 @@
             {{-- Birthday --}}
             <div class="form-group row ">
                 @if($post->status == "Available")
-                <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Due Date') }}</label>
+                <label for="due_date" class="col-md-4 col-form-label text-md-right">{{ __('Due Date') }}</label>
                     <div class="col-md-6">
                         <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="due_date" required>
                     </div>

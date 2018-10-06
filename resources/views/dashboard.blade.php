@@ -45,14 +45,14 @@ https://static.listionary.com/core/img/default-user.png
                             <table class="table">
                                 <tr>
                                     <th>Your items</th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>Status</th>
+                                    <th>Due Date</th>
                                 </tr>
                                 @foreach($posts as $post)
                                     <tr>
                                         <td><a href="/posts/{{$post->id}}"><h6>{{$post->title}}</h6></a></td>
-                                        <td><a href="/posts/{{$post->id}}/edit">Edit</a></td>
-                                        <td><a href="/posts/{{$post->id}}/" >View</a></td>
+                                        <td>{{$post->status}}</td>
+                                        <td>{{$post->due_date}}</td>
                                     </tr>
                                 @endforeach 
                             </table>
