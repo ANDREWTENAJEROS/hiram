@@ -29,6 +29,7 @@ return array(
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Report' => $baseDir . '/app/Report.php',
     'App\\User' => $baseDir . '/app/User.php',
     'Aws\\ACMPCA\\ACMPCAClient' => $vendorDir . '/aws/aws-sdk-php/src/ACMPCA/ACMPCAClient.php',
     'Aws\\ACMPCA\\Exception\\ACMPCAException' => $vendorDir . '/aws/aws-sdk-php/src/ACMPCA/Exception/ACMPCAException.php',

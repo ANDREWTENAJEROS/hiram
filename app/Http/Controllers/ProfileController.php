@@ -76,11 +76,11 @@ class ProfileController extends Controller
         //Check for correct user
         if(auth()->user()->id !== $user->id){
             return redirect('/dashboard')->with('error', 'Unauthorized Page');
+        } else {
+            $post->delete();
+            $user->delete();
+
+            return redirect('/dashboard')->with('success', 'Profile Deleted!');
         }
-
-        $post->delete();
-        $user->delete();
-
-        return redirect('/dashboard')->with('success', 'Profile Deleted!');
     }
 }
