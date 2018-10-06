@@ -62,22 +62,33 @@
             <div class="form-group row">
                 <div class="col-md-3">
                 <input style="margin:auto 0;" type="radio" name="status" value="Available" required>Available  
-                    </div>
-                    <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
                 <input style="margin:auto 0;" type="radio" name="status" value="Not Available" required>Not Available
                 </div>
             </div>
+
             {{-- Birthday --}}
             <div class="form-group row ">
+                @if($post->status == "Available")
                 <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Due Date') }}</label>
                     <div class="col-md-6">
                         <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="due_date" required>
                     </div>
+                @endif
                     {{-- <button type="submit" class="btn btn-primary">Set</button> --}}
                     {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                    
+                    @if($post->status == "Not Available")
                         {{Form::hidden('_method', 'PUT')}}
-                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                        {{Form::submit('Set', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
+                    @else
+                        {{Form::hidden('_method', 'PUT')}}
+                        {{Form::submit('Set', ['class' => 'btn btn-primary'])}}
+                    {!!Form::close()!!}
+                    @endif
+                        
             </div>
             @endif
 

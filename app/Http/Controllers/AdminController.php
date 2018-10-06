@@ -16,7 +16,7 @@ class AdminController extends Controller
     public function index()
     {
         $posts = Post::all();
-        $users = User::all();
+        $users = User::orderBy('name')->get();
         
         return view('admin')->with('users', $users);
     }

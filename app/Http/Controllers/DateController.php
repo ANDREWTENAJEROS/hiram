@@ -18,23 +18,12 @@ class DateController extends Controller
             $post->save();
         } else {
             $post->status = "Not Available";
-            $post->due_date = '';
+            $post->due_date = $request->input('due_date');
 
             $post->save();
         }
         
         $link = '/posts/' . $id;
         return redirect($link)->with('success', 'Successfully');
-    }
-
-    public function destroy($id){
-        $user = User::find($id);
-        $post = Post::find($id);
-
-        $post->delete();
-
-        $link = '/admin/' . $user->id;
-
-        return redirect($link)->with('success', 'Post Deleted');
     }
 }

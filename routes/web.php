@@ -4,7 +4,8 @@ Auth::routes();
 
 Route::get('/', 'PageController@index');
 
-Route::resource('admin', 'DateController'); //for due_date
+Route::resource('show', 'DateController'); //for due_date
+Route::resource('destroy', 'DeleteController'); //for admin to delete the posts
 Route::resource('profiles', 'ProfileController');
 Route::resource('posts','PostController');
 

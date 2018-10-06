@@ -63,7 +63,6 @@
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             @elseif(Auth::user()->id == $post->user->id)
                 <a href="/dashboard">Owner {{$post->user->name}}</a>
-
             @else
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             </br>   <div class="rw-ui-container" data-title="{{$post->user->id}}"></div>
@@ -136,8 +135,7 @@
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
-                            {!!Form::open(['action' => ['DateController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                            {!!Form::open(['action' => ['DeleteController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
                                     {{Form::hidden('_method', 'DELETE')}}
                                     {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                             {!!Form::close()!!}
