@@ -73,14 +73,13 @@ class ProfileController extends Controller
         $user = User::find($id);
         $post = Post::select('id')->where('user_id', $id);
 
-        //Check for correct user
-        if(auth()->user()->id !== $user->id){
-            return redirect('/dashboard')->with('error', 'Unauthorized Page');
-        } else {
-            $post->delete();
-            $user->delete();
+        $post->delete();
+        $user->delete();
 
-            return redirect('/dashboard')->with('success', 'Profile Deleted!');
+        if(auth()->user()->email == "admin@admin.com"){
+            return redirect('/admin')->with('success', 'Profile Deleted!');   
         }
+
+        return redirect('/dashboard')->with('success', 'Profile Deleted!');
     }
 }

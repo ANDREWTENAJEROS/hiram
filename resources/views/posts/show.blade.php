@@ -63,24 +63,25 @@
 
             {{-- Birthday --}}
             <div class="form-group row ">
-                @if($post->status == "Available")
+                @if($post->status == "Available" && $post->user_id == Auth::user()->id)
                 <label for="due_date" class="col-md-4 col-form-label text-md-right">{{ __('Due Date') }}</label>
                     <div class="col-md-6">
                         <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="due_date" required>
                     </div>
-                @endif
                     {{-- <button type="submit" class="btn btn-primary">Set</button> --}}
+                @endif
+
+                @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
                     {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-                    
-                    @if($post->status == "Not Available")
                         {{Form::hidden('_method', 'PUT')}}
                         {{Form::submit('Returned', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
-                    @else
+                @elseif($post->user_id == Auth::user()->id)
+                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
                         {{Form::hidden('_method', 'PUT')}}
                         {{Form::submit('Set', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
-                    @endif
+                @endif
                         
             </div>
             @endif

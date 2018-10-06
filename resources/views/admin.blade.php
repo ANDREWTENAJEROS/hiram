@@ -21,8 +21,7 @@
                             <div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
                                 <img src="images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
                                 onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"> </br>logout
-                        </a> 
+                                document.getElementById('logout-form').submit();"> </br>logout </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                     </form>
