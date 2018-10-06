@@ -58,15 +58,17 @@
         <br><br>
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
-            @if(Auth::user()->id == $post->user->id)
-            <div class="form-group row">
-                <div class="col-md-3">
-                <input style="margin:auto 0;" type="radio" name="status" value="Available" required>Available  
+            @if(Auth::guest() == false)
+                @if(Auth::user()->id == $post->user->id)
+                <div class="form-group row">
+                    <div class="col-md-3">
+                    <input style="margin:auto 0;" type="radio" name="status" value="Available" required>Available  
+                    </div>
+                    <div class="col-md-3">
+                    <input style="margin:auto 0;" type="radio" name="status" value="Not Available" required>Not Available
+                    </div>
                 </div>
-                <div class="col-md-3">
-                <input style="margin:auto 0;" type="radio" name="status" value="Not Available" required>Not Available
-                </div>
-            </div>
+                @endif
 
             {{-- Birthday --}}
             <div class="form-group row ">
@@ -81,7 +83,7 @@
                     
                     @if($post->status == "Not Available")
                         {{Form::hidden('_method', 'PUT')}}
-                        {{Form::submit('Set', ['class' => 'btn btn-primary'])}}
+                        {{Form::submit('Returned', ['class' => 'btn btn-primary'])}}
                     {!!Form::close()!!}
                     @else
                         {{Form::hidden('_method', 'PUT')}}
