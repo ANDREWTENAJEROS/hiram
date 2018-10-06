@@ -126,6 +126,7 @@ class PostController extends Controller
             $post->image2 = $imageURL2;
         }
 
+        $post->status = 'Available';
         $post->report_id = 0;
         $post->cover_image = $imageURL;
         $post->save();
@@ -292,5 +293,17 @@ class PostController extends Controller
         $post->delete();
 
         return redirect('/dashboard')->with('success', 'Item Removed');
+    }
+
+    public function date_update($id){
+        $post = Post::find($id);
+
+        $post->due_date = $request->input('due_date');
+        $post->status = 'Not Available';
+
+        $post->save();
+
+        $link = '/posts/' . $id;
+        return redirect($link)->with('success', 'Successfully');
     }
 }

@@ -58,6 +58,31 @@
         <br><br>
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
+            @if(Auth::user()->id == $post->user->id)
+            <div class="form-group row">
+                <div class="col-md-3">
+                <input style="margin:auto 0;" type="radio" name="status" value="Available" required>Available  
+                    </div>
+                    <div class="col-md-3">
+                <input style="margin:auto 0;" type="radio" name="status" value="Not Available" required>Not Available
+                </div>
+            </div>
+            {{-- Birthday --}}
+            <div class="form-group row ">
+                <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Due Date') }}</label>
+                    <div class="col-md-6">
+                        <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="due_date" required>
+                    </div>
+                    {{-- <button type="submit" class="btn btn-primary">Set</button> --}}
+                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                        {{Form::hidden('_method', 'PUT')}}
+                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                    {!!Form::close()!!}
+            </div>
+            @endif
+
+            <h1>{{$post->status}}</h1>
+            </br>
             <h1>{{$post->title}}</h1>
             @if(Auth::guest())
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>

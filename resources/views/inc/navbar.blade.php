@@ -49,46 +49,48 @@
         </div>
         
         @else
+            <div class="wrap_menu" style=" position: fixed;">
+                <nav class="menu">
+                    <ul class="main_menu">
+                        <li>
+                            <a href="/posts">Home</a>
+                        </li>
+                        <li>
+                        <a href="/posts/create">Upload</a>
+                        </li>
+                        <li>
+                            <a href="/dashboard">My Account</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
+            <div class="header-icons">
+                
+            @if(Auth::user()->email == "admin@admin.com")
+                <a href="/admin" class="header-wrapicon1 dis-block">
+                    {{(Auth::user()->name)}}
+                    <img src="../../images/icons/icon-header-01.png" style="margin-left:10px" class="header-icon1" alt="Dashboard">
+                </a>
+            @else
+                <a href="/dashboard" class="header-wrapicon1 dis-block">
+                    {{(Auth::user()->name)}}
+                    <img src="../../images/icons/icon-header-01.png" style="margin-left:10px" class="header-icon1" alt="Dashboard">
+                </a>
+            @endif
 
-
-                    <div class="wrap_menu" style=" position: fixed;">
-                        <nav class="menu">
-                            <ul class="main_menu">
-                                <li>
-                                    <a href="/posts">Home</a>
-                                </li>
-								<li>
-								<a href="/posts/create">Upload</a>
-                                </li>
-								<li>
-                                    <a href="/dashboard">My Account</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-
-
-					<div class="header-icons">
-
-                       
-                    <a href="/dashboard" class="header-wrapicon1 dis-block">
-                        {{(Auth::user()->name)}}
-                        <img src="../../images/icons/icon-header-01.png" style="margin-left:10px" class="header-icon1" alt="Dashboard">
+                <span class="linedivide1"></span>
+                <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
+                        <img src="../../images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
+                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
                     </a>
-                    
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>
                     <span class="linedivide1"></span>
-                    <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
-                            <img src="../../images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                        </a>
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-@csrf
-</form>
-					<span class="linedivide1"></span>
-    </div>
-	@endguest
+                    </div>
+                    @endguest
 </div>
 
 
