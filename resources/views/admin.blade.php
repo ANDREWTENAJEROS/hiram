@@ -41,9 +41,11 @@
                                 </tr>
                                 @foreach($users as $user)
                                     <tr>
-                                        <td><a href="/admin/{{$user->id}}"><h6>{{$user->name}}</h6></a></td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->mobile}}</td>
+                                        @if($user->email !== "admin@admin.com")
+                                            <td><a href="/admin/{{$user->id}}"><h6>{{$user->name}}</h6></a></td>
+                                            <td>{{$user->email}}</td>
+                                            <td>{{$user->mobile}}</td>
+                                        @endif
                                     </tr>
                                 @endforeach 
                             </table>
