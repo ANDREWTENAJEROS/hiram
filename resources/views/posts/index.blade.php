@@ -35,31 +35,33 @@
                         </br>
                             @if(count($posts) > 0)
                                 @foreach($posts as $post)
+                                    @if($post->status == "Available")
                                     <div class="col-sm-12 col-md-4 col-lg-3 p-b-50">
-                                        <!-- Block2 -->
-                                        <div class="block2"  style="margin: 10px; align:center; ">
-                                            <div style="width:100%; margin: 0 auto;"  class="block2-img wrap-pic-w of-hidden pos-relative">
-                                                
-                                                <img style=" margin: 0 auto; " src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
-
-                                                <div style=" margin: 0 auto; " class="block2-overlay trans-0-4">
-                                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-                                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                                    </a>
-                                                    <div style=" margin: 0 auto; " class="block2-btn-addcart w-size1 trans-0-4">
-                                                             <a style=" margin: 0 auto; " href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
+                                            <!-- Block2 -->
+                                            <div class="block2"  style="margin: 10px; align:center; ">
+                                                <div style="width:100%; margin: 0 auto;"  class="block2-img wrap-pic-w of-hidden pos-relative">
+                                                    
+                                                    <img style=" margin: 0 auto; " src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" />
+    
+                                                    <div style=" margin: 0 auto; " class="block2-overlay trans-0-4">
+                                                        <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+                                                            <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                                            <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                                        </a>
+                                                        <div style=" margin: 0 auto; " class="block2-btn-addcart w-size1 trans-0-4">
+                                                                 <a style=" margin: 0 auto; " href="/posts/{{$post->id}}" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4"  > View item</a>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <div style=" margin: 0 auto; ">
+                                                    <a href="/posts/{{$post->id}}"><h5 style="text-align:center; padding-top: 10px;">{{$post->title}}</h5></a>
+                                               </div>
+                                               <div style="text-align:center; margin: 0 auto;">
+                                               <small>₱ {{$post->price_per_day}} per day</small>
+                                               </div>
                                             </div>
-                                            <div style=" margin: 0 auto; ">
-                                                <a href="/posts/{{$post->id}}"><h5 style="text-align:center; padding-top: 10px;">{{$post->title}}</h5></a>
-                                           </div>
-                                           <div style="text-align:center; margin: 0 auto;">
-                                           <small>₱ {{$post->price_per_day}} per day</small>
-                                           </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endforeach
                             @else
                                 <p class="centered">No posts found</p>

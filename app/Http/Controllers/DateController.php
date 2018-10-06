@@ -9,6 +9,7 @@ use App\Post;
 class DateController extends Controller
 {
     public function update(Request $request, $id){
+
         $post = Post::find($id);
 
         if($post->status == "Not Available"){
