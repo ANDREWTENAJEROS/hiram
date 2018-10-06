@@ -15,46 +15,11 @@
                         ITRZ Davao City, DVO 8000 or call us on (+63) 960 200 98
                     </p>
 
-                    <div class="flex-m p-t-30">
-                        <a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-                        <a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-                        <a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-                        <a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-                        <a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
-                    </div>
+                 
                 </div>
             </div>
 
-            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-                <h4 class="s-text12 p-b-30">
-                    Categories
-                </h4>
-
-                <ul>
-                    <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            Books and references
-                        </a>
-                    </li>
-                    <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            Devices and instruments
-                        </a>
-                    </li>
-
-                    <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            Apparel and Accesories
-                        </a>
-                    </li>
-
-                    <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            General Supplies
-                        </a>
-                    </li>
-                </ul>
-            </div>
+           
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
                 <h4 class="s-text12 p-b-30">
@@ -71,7 +36,7 @@
                     </li>
 
                     <li class="p-b-9">
-                        <a href="/about" class="s-text7">
+                    <a class="s-text7"href="mailto:hiramph.online@gmail.com">
                             Contact Us
                         </a>
                     </li>
@@ -81,33 +46,23 @@
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
                 <h4 class="s-text12 p-b-30">
-                    Help
+                    FAQS
                 </h4>
 
                 <ul>
                     <li class="p-b-9">
                         <a href="/policy" class="s-text7">
-                            Terms & Conditions
+                            What are the Terms & Conditions?
                         </a>
                     </li>
 
                     <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            Returns
+                        <a href="http://www.pnp.gov.ph/news-and-information/772-online-scam-tops-cybercrime-complain" class="s-text7">
+                            What should I do when I get scammed?
                         </a>
                     </li>
 
-                    <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            Shipping
-                        </a>
-                    </li>
-
-                    <li class="p-b-9">
-                        <a href="#" class="s-text7">
-                            FAQs
-                        </a>
-                    </li>
+                 
                 </ul>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PageController extends Controller
 {
@@ -32,6 +33,11 @@ class PageController extends Controller
         // return view('pages.index',compact('title'));
         return view('pages.policy')->with('title', $title);
     }
+    public function agreement(){
+            $title = 'Agreement';
+            // return view('pages.index',compact('title'));
+            return view('pages.agreement')->with('title', $title);
+        }
 
     public function search(){
         $title = 'Search items on Hiram';

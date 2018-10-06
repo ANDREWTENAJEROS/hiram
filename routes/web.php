@@ -14,3 +14,4 @@ Route::get('/dashboard','DashboardController@index');
 
 Route::get('/sample', 'SampleController@view');
 Route::get('/policy', 'PageController@policy');
+Route::get('/agreement', 'PageController@agreement');

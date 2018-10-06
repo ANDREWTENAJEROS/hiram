@@ -14,6 +14,10 @@
                             {{ session('status') }}
                         </div>
                     @endif   
+
+https://static.listionary.com/core/img/default-user.png
+<img src="imagenotfound.gif" alt="Image not found" onerror="this.onerror=null;this.src='imagefound.gif';" />
+
                         <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{(Auth::user()->profile_image)}}"  alt=""/>
                         </br></br>
                     <h3>Hi {{(Auth::user()->name)}}!</h3> </br>

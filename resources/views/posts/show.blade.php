@@ -63,7 +63,7 @@
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             @elseif(Auth::user()->id == $post->user->id)
                 <a href="/dashboard">Owner {{$post->user->name}}</a>
-
+               
             @else
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             </br>   <div class="rw-ui-container" data-title="{{$post->user->id}}"></div>
@@ -125,8 +125,12 @@
                         </button>
                     </a>
                 </div>
+                <div class="col s12 m6">
+                 <a  href="/agreement" target="_blank" >
+                 <button class="login100-form-btn">Print agreement</button>
+                </a>
+                </div>
             </div>
-
             </br> </br>
          
         @else 
@@ -156,6 +160,7 @@
                     <a href="mailto:{{$post->user->email}}?body=Hi {{$post->user->name}}, This is {{(Auth::user()->name)}} and I am interested on renting your {{$post->title}}">
                         <button class= "login100-form-btn">
                             e-mail
+
                         </button>
                     </a>
                 </div>
