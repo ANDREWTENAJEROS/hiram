@@ -10,6 +10,9 @@ Route::resource('profiles', 'ProfileController');
 Route::resource('posts','PostController');
 
 Route::get('/profile/{user_id}', 'ProfileController@profile');
+
+Route::get('/policy', 'PageController@policy');
+Route::get('/agreement', 'PageController@agreement');
 Route::get('/about', 'PageController@about');
 Route::get('/services','PageController@services');
 
@@ -18,6 +21,3 @@ Route::get('/admin/{user_id}', 'AdminController@show_user');
 Route::get('/admin/{user_id}/{post_id}', 'AdminController@show_post');
 
 Route::get('/dashboard','DashboardController@index');
-Route::get('/sample', 'SampleController@view');
-Route::get('/policy', 'PageController@policy');
-Route::get('/agreement', 'PageController@agreement');

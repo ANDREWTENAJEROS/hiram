@@ -15,10 +15,21 @@ class AdminController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
-        $users = User::orderBy('name')->get();
+        if(auth()->user()->email !== "admin@admin.com"){
+            $posts = Post::latest()->paginate(8);
+            $users = User::orderBy('name')->get();
+            
+            $user_id = auth()->user()->id;
+            $user = User::find($user_id);
+            
+            return redirect('/dashboard')->with('posts', $user->posts);
+        } else {
+            $posts = Post::all();
+            $users = User::orderBy('name')->get();
+            
+            return view('admin')->with('users', $users);
+        }
         
-        return view('admin')->with('users', $users);
     }
 
     public function name()
