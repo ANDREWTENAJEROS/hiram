@@ -58,13 +58,10 @@
         <br><br>
         <div class="col s12 m6" style=" margin: 0 auto;">
             </br>
-            @if(Auth::guest() == false)
-               
-
-            
-
-            </br>
             <h1>{{$post->title}}</h1>
+
+            @if(Auth::guest() == false)
+            </br>
             @if(Auth::guest())
                 <a href="/profile/{{$post->user_id}}">Owner {{$post->user->name}}</a>
             @elseif(Auth::user()->id == $post->user->id)
