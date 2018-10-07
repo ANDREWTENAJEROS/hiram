@@ -6,7 +6,7 @@
 
     <h1>Edit Post</h1>
     {!! Form::open(['action' => ['PostController@update', $post->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-        <div class="form-group">
+        <div class="form-group jumbotron">
         {{Form::label('title', 'What are item are you lending?')}}
                 {{Form::text('title', $post->title, ['class' => 'input100','required' => 'required', 'placeholder' => 'Ex: Solderless Breadboard'])}}
                 </div>

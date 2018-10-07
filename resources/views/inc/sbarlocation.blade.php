@@ -17,7 +17,7 @@
 {{csrf_field()}}
 <div>
     <input class="input100" type="text" name="search_location" style="margin-bottom: 10px;" 
-        placeholder="Search Location..." value="{{ isset($search_location) ? $search_location : '' }}">
+        placeholder="Search by location..." value="{{ isset($search_location) ? $search_location : '' }}">
 
     <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4 ">
         <i class="fs-12 fa fa-search" aria-hidden="true"></i>

@@ -21,18 +21,32 @@
                         <h3>This is {{$post->user->name}}!</h3> </br>
                         @break
                     @endforeach
-                    <div class="row">
-                        <div class="col s12 m3"> <a href="/posts/create" class="header-wrapicon1 dis-block">
-                            <img src="../../images/icons/icon-lend.png" class="header-icon1" alt="edit profile"></br>lend item</a> 
-                        </div>
-                        <div class="col s12 m3"> <a href="{{ route('logout') }}" class="header-wrapicon1 dis-block">
-                            <img src="../../images/icons/icon-logout.png" href="{{ route('logout') }}" class="header-icon1" alt="Logout"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> </br>logout </a> 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                            </form>
-                    </div>
-            </div>
+                  
+<script type="text/javascript">(function(d, t, e, m){
+    
+    // Async Rating-Widget initialization.
+    window.RW_Async_Init = function(){
+                
+        RW.init({
+            huid: "416621",
+            uid: "ae1f0e2b22bff82cbade96615846e26c",
+            options: { "style": "oxygen" } 
+        });
+        RW.render();
+    };
+        // Append Rating-Widget JavaScript library.
+    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
+        l = d.location, ck = "Y" + t.getFullYear() + 
+        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
+        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
+        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
+    if (d.getElementById(id)) return;              
+    rw = d.createElement(e);
+    rw.id = id; rw.async = true; rw.type = "text/javascript";
+    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
+    s.parentNode.insertBefore(rw, s);
+    }(document, new Date(), "script", "rating-widget.com/"));</script>
+    <div class="rw-ui-container" data-title="{{$post->user->id}}"></div>
                         @if(count($posts) > 0)  
                         </br></br></br>
                         <div class="row justify-content-center">

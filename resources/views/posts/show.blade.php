@@ -61,32 +61,8 @@
             @if(Auth::guest() == false)
                
 
-            {{-- Birthday --}}
-            <div class="form-group row ">
-                @if($post->status == "Available" && $post->user_id == Auth::user()->id)
-                <label for="due_date" class="col-md-4 col-form-label text-md-right">{{ __('Due Date') }}</label>
-                    <div class="col-md-6">
-                        <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="width:80%; padding-left: 25px;padding-right: 20px;" class="input100" name="due_date" required>
-                    </div>
-                    {{-- <button type="submit" class="btn btn-primary">Set</button> --}}
-                @endif
+            
 
-                @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
-                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-                        {{Form::hidden('_method', 'PUT')}}
-                        {{Form::submit('Returned', ['class' => 'btn btn-primary'])}}
-                    {!!Form::close()!!}
-                @elseif($post->user_id == Auth::user()->id)
-                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-                        {{Form::hidden('_method', 'PUT')}}
-                        {{Form::submit('Set', ['class' => 'btn btn-primary'])}}
-                    {!!Form::close()!!}
-                @endif
-                        
-            </div>
-            @endif
-
-            <h1>{{$post->status}}</h1>
             </br>
             <h1>{{$post->title}}</h1>
             @if(Auth::guest())
@@ -99,10 +75,52 @@
             </br>   <div class="rw-ui-container" data-title="{{$post->user->id}}"></div>
 
             @endif
+
+
                 {{-- <small>Owner:</small>
                 </br>
                 <small>{{$post->user->name}}</small> --}}
             </br>
+            </br>
+            <!-- availability -->
+            @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
+                 <small>Set item as avaiable when it is returned</small>
+                 @elseif($post->user_id == Auth::user()->id)
+                 <small>Set return day for this item when it is borrowed</small>
+                @endif
+            <div class="row">
+
+                 
+                @if($post->status == "Available" && $post->user_id == Auth::user()->id)
+                    <div class="col-md-4">
+                        <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="padding-left: 20px;padding-right: 0px; width: 100%;  margin-top:10px; margin-bottom:10px;" class="input100" name="due_date" required>
+                    </div>
+                @endif
+
+                @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
+                <div class="col-md-4">
+                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST'])!!}
+                        {{Form::hidden('_method', 'PUT')}}
+                        {{Form::submit('Returned', ['class' => 'login100-form-btn', 'style'=>'width:100%; margin-top:10px; margin-bottom:10px;' ])}}
+                    {!!Form::close()!!}
+                    </div>
+                    <div class="col-md-4">
+                    <h5 style=" margin-top:15px; margin-bottom:10px;">Status: {{$post->status}}</h5>
+                    </div>
+                @elseif($post->user_id == Auth::user()->id)
+                    <div class="col-md-4">
+                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST' ])!!}
+                        {{Form::hidden('_method', 'PUT')}}
+                        {{Form::submit('Set', ['class' => 'login100-form-btn',  'style'=>'width:100%; margin-top:10px; margin-bottom:10px;'])}}
+                    {!!Form::close()!!}
+                    </div>
+                    <div class="col-md-4">
+                    <h5 style=" margin-top:15px; margin-bottom:10px;">Status: {{$post->status}}</h5>
+                    </div>
+
+                @endif
+      </div>
+            @endif 
             </br>
             <div> 
             <small>{{$post->body}}</small>
