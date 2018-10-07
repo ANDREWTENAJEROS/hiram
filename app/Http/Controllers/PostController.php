@@ -126,6 +126,7 @@ class PostController extends Controller
             $post->image2 = $imageURL2;
         }
 
+        $post->borrower = 'None';
         $post->status = 'Available';
         $post->report_id = 0;
         $post->cover_image = $imageURL;
