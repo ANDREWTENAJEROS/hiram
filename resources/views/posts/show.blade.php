@@ -44,14 +44,16 @@
             </br>
             <ul>
                 <li>
-             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" alt=""/>
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" alt="error loading image" />
+                </li>
+                @if(!empty($post->image1))
+                <li>
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image1}}" />
                 </li>
                 <li>
-             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image1}}" alt=""/>
+             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image2}}" />
                 </li>
-                <li>
-             <img  style="width:350px" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->image2}}" alt=""/>
-                </li>
+                @endif
                  </br>
 </ul>   
             </div>
@@ -106,6 +108,7 @@
                     <div class="col-md-6">
                     <h6 style=" width:100%; margin-top:10px; margin-bottom:10px; ">Borrowed by: {{$post->borrower}}</h6>
                     </div>
+                    </div>
                 @elseif($post->user_id == Auth::user()->id)
                 <div class="col-md-6">
                 <div class="row">
@@ -119,10 +122,11 @@
                         </div>
                     </div>
                 </div>
+                </div>
                 @endif
                 {!!Form::close()!!}
 
-      </div>
+      
       <!-- <div class="col-md-4">
                     <small style=" margin-top:15px; margin-bottom:10px;">Status: {{--$post->status--}}</small>
                     </div> -->
