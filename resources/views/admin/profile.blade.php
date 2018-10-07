@@ -62,9 +62,9 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                             </form>
+                        </div>
                     </div>
-            </div>
-                        @if(count($posts) > 0)  
+                    @if(count($posts) > 0)  
                         </br></br></br>
                         <strong> <h3>{{$post->user->name}}'s items</h3></strong>
                         <div class="row justify-content-center">
@@ -84,11 +84,10 @@
                                 @endforeach 
                             </table>
                         </div>   
-                        
-                        @else
-                            </br>
-                          <p>You have not lend any items yet.</p>
-                        @endif
+                    @else
+                        </br>
+                        <p>You have not lend any items yet.</p>
+                    @endif
                 </div>
             </div>
         </div>
