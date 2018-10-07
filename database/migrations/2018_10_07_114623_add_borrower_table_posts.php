@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStatusTablePosts extends Migration
+class AddBorrowerTablePosts extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddStatusTablePosts extends Migration
     public function up()
     {
         Schema::table('posts', function($table){
-            $table->string('status')->nullable();
+            $table->string('borrower')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddStatusTablePosts extends Migration
     public function down()
     {
         Schema::table('posts', function($table){
-            $dropColumn->string('status');
+            $dropColumn->string('borrower');
         });
     }
 }
