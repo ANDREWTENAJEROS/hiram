@@ -87,15 +87,18 @@
                 @endif
             <div class="row">
 
-            {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST'])!!}
                 @if($post->status == "Available" && $post->user_id == Auth::user()->id)
                     <div class="col-md-6">
+                    {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST'])!!}
+
                         <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="padding-left: 10px;padding-right: 0px; width: 100%;  margin-top:10px; margin-bottom:10px;" class="input100" name="due_date" required>
                     </div>
                 @endif
 
                 @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
                 <div class="col-md-4">
+                {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST'])!!}
+
                         {{Form::hidden('_method', 'PUT')}}
                         {{Form::submit('Returned', ['class' => 'login100-form-btn', 'style'=>'width:100%; margin-top:10px; margin-bottom:10px;' ])}}
                     {!!Form::close()!!}
