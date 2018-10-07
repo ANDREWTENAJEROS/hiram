@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>H I R A M </title>
+<meta name="Description" content="hiram a lending and renting platform for students">
+<meta name="Keywords" content="borrow lend borrower lender rentee renting items school lend items ">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

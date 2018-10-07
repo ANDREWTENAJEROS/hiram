@@ -1,6 +1,6 @@
 
 <div >
-<form action="{{route('posts.index')}}" method="GET" role="search">
+    <form action="{{route('posts.index')}}" method="GET" role="search">
         {{-- {!! Form::open(['action' => 'PostController@search', 'method' => 'POST', 'role' => 'search'])!!} --}}
         {{csrf_field()}}
         
@@ -12,11 +12,11 @@
         <input class="input100" type="text" name="search_product" style="margin-bottom: 10px;" 
             placeholder="Search Products..." value="{{ isset($search_product) ? $search_product : '' }}">
 
-        <button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4 ">
+        <button style="padding-bottom:8px"class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4 ">
             <i class="fs-12 fa fa-search" aria-hidden="true"></i>
         </button>
-    </div>
-{{-- </form> --}}
+    </div>  
+    {{-- </form> --}}
 
     <ul class="main_menu">
 

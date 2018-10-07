@@ -21,3 +21,8 @@ Route::get('/admin/{user_id}', 'AdminController@show_user');
 Route::get('/admin/{user_id}/{post_id}', 'AdminController@show_post');
 
 Route::get('/dashboard','DashboardController@index');
+Route::get('/sitemap', 'SitemapController@index');
+Route::get('/sitemap/web', 'SitemapController@web');
+Route::get('/sitemap/posts', 'SitemapController@posts');
+Route::get('/sitemap/profile', 'SitemapController@profile');
+Route::get('/sitemap/podcasts', 'SitemapController@podcasts');
