@@ -86,14 +86,14 @@
             @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
                  <small>Set item as avaiable when it is returned</small>
                  @elseif($post->user_id == Auth::user()->id)
-                 <small>Set return day for this item when it is borrowed</small>
+                 <small>Set return day and borrower's name for this item when it is borrowed</small>
                 @endif
             <div class="row">
 
                  
                 @if($post->status == "Available" && $post->user_id == Auth::user()->id)
-                    <div class="col-md-4">
-                        <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="padding-left: 20px;padding-right: 0px; width: 100%;  margin-top:10px; margin-bottom:10px;" class="input100" name="due_date" required>
+                    <div class="col-md-6">
+                        <input id="due_date" type="date" placeholder="MM/DD/YYYY" style="padding-left: 10px;padding-right: 0px; width: 100%;  margin-top:10px; margin-bottom:10px;" class="input100" name="due_date" required>
                     </div>
                 @endif
 
@@ -104,22 +104,34 @@
                         {{Form::submit('Returned', ['class' => 'login100-form-btn', 'style'=>'width:100%; margin-top:10px; margin-bottom:10px;' ])}}
                     {!!Form::close()!!}
                     </div>
-                    <div class="col-md-4">
-                    <h5 style=" margin-top:15px; margin-bottom:10px;">Status: {{$post->status}}</h5>
+                    <div class="col-md-6">
+                    <h6 style=" width:100%; margin-top:10px; margin-bottom:10px; ">Borrowed by: {{$post->borrorer}}</h6>
                     </div>
+                    
                 @elseif($post->user_id == Auth::user()->id)
-                    <div class="col-md-4">
+                    
+                    <div class="col-md-6">
                     {!!Form::open(['action' => ['DateController@update', $post->id], 'method' => 'POST' ])!!}
+                    <div class="row" >
+                    <div class="col-md-8" >
                         {{Form::hidden('_method', 'PUT')}}
+                        {{--Form::text('borrower', '', ['class' => 'input100', 'placeholder' => 'Borrower\'s name','required' => 'required','style'=>'padding-left: 5px;padding-right: 0px; width: 100%;  margin-top:10px; margin-bottom:10px;'])--}}
+                        </div>
+                        <div class="col-md-4">
                         {{Form::submit('Set', ['class' => 'login100-form-btn',  'style'=>'width:100%; margin-top:10px; margin-bottom:10px;'])}}
+                    </div>
+                    </div>
                     {!!Form::close()!!}
                     </div>
-                    <div class="col-md-4">
-                    <h5 style=" margin-top:15px; margin-bottom:10px;">Status: {{$post->status}}</h5>
-                    </div>
+
+
+                    
 
                 @endif
       </div>
+      <!-- <div class="col-md-4">
+                    <small style=" margin-top:15px; margin-bottom:10px;">Status: {{--$post->status--}}</small>
+                    </div> -->
             @endif 
             </br>
             <div> 

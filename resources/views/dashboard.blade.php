@@ -49,8 +49,13 @@
                                 @foreach($posts as $post)
                                     <tr>
                                         <td><a href="/posts/{{$post->id}}"><h6>{{$post->title}}</h6></a></td>
-                                        <td>{{$post->status}}</td>
+                                         @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
+                                        <td>{{with $post->borrower}}</td>
+                                         @else
+                                         <td>{{$post->status}}</td>
+                                         @endif
                                         <td>{{$post->due_date}}</td>
+
                                     </tr>
                                 @endforeach 
                             </table>
