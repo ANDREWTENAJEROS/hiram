@@ -50,7 +50,7 @@
                                     <tr>
                                         <td><a href="/posts/{{$post->id}}"><h6>{{$post->title}}</h6></a></td>
                                          @if($post->status == "Not Available" && $post->user_id == Auth::user()->id)
-                                        <td>{{with $post->borrower}}</td>
+                                         <td>{{$post->borrower}}</td>
                                          @else
                                          <td>{{$post->status}}</td>
                                          @endif
