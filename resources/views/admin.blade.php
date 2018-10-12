@@ -53,7 +53,7 @@
                         
                         @else
                             </br>
-                          <p>You have not lend any items yet.</p>
+                          <p>No User Profile yet</p>
                         @endif
                 </div>
             </div>
