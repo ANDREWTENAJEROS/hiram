@@ -2,7 +2,7 @@
 
 @section('content')
 @include('inc.navbarcss1')
-
+@if(Auth::user()->email == "admin@admin.com")
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -16,9 +16,9 @@
                         </div>
                     @endif
                     @foreach($posts as $post)
-                        <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}" />
+                        <img style=" margin: 0 auto; " width="100" lenght="100" src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->user->profile_image}}" onerror="this.onerror=null;this.src='https://static.listionary.com/core/img/default-user.png';"  />
                         </br></br>
-                        <h3>{{$post->user->name}}'s Profile</h3> </br>
+                        <h4>{{$post->user->name}}'s Profile</h4> </br>
                         @break
                     @endforeach
                     <div class="row">
@@ -65,20 +65,19 @@
                         </div>
                     </div>
                     @if(count($posts) > 0)  
-                        </br></br></br>
-                        <strong> <h3>{{$post->user->name}}'s items</h3></strong>
+                        </br></br>
                         <div class="row justify-content-center">
                             <table class="table">
                                 <tr>
                                     <th>Item's name</th>
                                     <th>Image</th>
-                                    <th>Report</th>
+                                    <th>Report count</th>
                                 </tr>
                                 @foreach($posts as $post)
                                     <tr>
                                         <td><a href="/admin/{{$post->user->id}}/{{$post->id}}"><h6>{{$post->title}}</h6></a></td>
                                         <td> <img style=" margin: 0 auto; " width="100" lenght="100"
-                                            src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" /></td>
+                                            src="https://s3-ap-southeast-1.amazonaws.com/hiramstorage/{{$post->cover_image}}" alt="error loading image" /></td>
                                         <td>{{$post->report_id}}</td>
                                     </tr>
                                 @endforeach 
@@ -93,4 +92,9 @@
         </div>
     </div>
 </div>
+@else
+<div class="jumbotron">
+<h3>Error 403: Forbidden! Your have no admin access</h3>
+<div>
+@endif
 @endsection
