@@ -55,7 +55,15 @@
                         <li>
                             <a href="/posts">Home</a>
                         </li>
-                        @if(!Auth::user()->email == "admin@admin.com")
+                        @if(Auth::user()->email == "admin@admin.com")
+
+                         <li>
+                            <a href="/admin" class="header-wrapicon1 dis-block">
+                            Admin Dashboard
+                            </a>
+                            </li>
+                        @else
+                           
                         <li>
                         <a href="/posts/create">Upload</a>
                         </li>
@@ -63,13 +71,7 @@
                         <li>
                             <a href="/dashboard">My Account</a>
                         </li>
-                        <li>
-                        @if(Auth::user()->email == "admin@admin.com")
-                <a href="/admin" class="header-wrapicon1 dis-block">
-                Admin Dashboard
-                    </a>
-                    @endif
-                        </li>
+                        
                     </ul>
                 </nav>
             </div>
